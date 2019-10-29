@@ -65,3 +65,4 @@ Route::namespace('Admin')->prefix('/admin')->middleware('auth')->name('admin.')-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test','HomeController@test')->name('test');

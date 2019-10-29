@@ -1,3 +1,4 @@
+{{--{{--Đây là trang mặc định của Laravel đang ko dùng đến --}}
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
