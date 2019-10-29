@@ -47,6 +47,7 @@
         overflow: hidden;
     }
 </style>
+@include('layouts.ms-bubble')
 @stack('css')
 
 @include('layouts.navbar')
