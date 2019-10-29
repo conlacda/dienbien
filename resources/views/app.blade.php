@@ -41,17 +41,20 @@
         height: 150px;
         overflow: hidden;
     }
+
     .summary-hidden1 {
         color: white;
         height: 150px;
         overflow: hidden;
     }
 </style>
-@include('layouts.ms-bubble')
 @stack('css')
 
 @include('layouts.navbar')
+<body id="Body">
+@include('layouts.ms-bubble')
 @yield('content')
+</body>
 @include('layouts.footer')
 
 {{--Script--}}
