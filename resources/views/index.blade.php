@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-    <body id="Body">
+
 
     <form method="post" action="/" id="Form" enctype="multipart/form-data">
         <div class="aspNetHidden">
@@ -1404,5 +1404,5 @@
             </div>
         </div>
     </form>
-    </body>
+
 @endsection

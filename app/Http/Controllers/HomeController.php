@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return redirect('/');
     }
+
+    public function test()
+    {
+        return view('test');
+    }
 }
