@@ -107,6 +107,8 @@
 <script src="/provider/dist/js/demo.js"></script>
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.12.0/build/alertify.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <script>
     $(document).ready(function () {
         $('.summernote').summernote({

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Activity;
 use App\Http\Controllers\Controller;
 use App\NewsPost;
+use App\Repositories\ImageHelper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -41,16 +42,14 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new Activity();
-        $post->content = $request['content'];
-        if (isset($request['cover_img'])) {
-            $file = $request['cover_img'];
-            $path = $file->store('public/news');
-            $post->cover_img = Storage::url($path);
+        $activity = new Activity();
+        $activity['content'] = $request['content'];
+        if ($request->hasFile('cover_img')){
+            $activity->cover_img = ImageHelper::store($request->file('cover_img'));
         }
-        $post->title = $request['title'];
-        $post->slug = Str::slug($post->title, '-') . uniqid();
-        $post->save();
+        $activity->title = $request['title'];
+        $activity->slug = Str::slug($activity->title, '-') . uniqid();
+        $activity->save();
         return redirect()->route('admin.activities.index');
     }
 
@@ -80,8 +79,8 @@ class ActivityController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param $slug
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $slug)
@@ -90,15 +89,13 @@ class ActivityController extends Controller
         if ($activity == NULL) abort(404);
         $activity->title = $request['title'];
         $activity->content = $request['content'];
-        if (isset($request['cover_img'])) {
-            if (file_exists(public_path($post->cover_img)) && $post->cover_img != $this->default_cover_img)
-            {
-                unlink(public_path($post->cover_img));
-            }
-            $file = $request['cover_img'];
-            $path = $file->store('public/news');
-            $post->cover_img = Storage::url($path);
-        }
+       if ($request->hasFile('cover_img')){
+
+           if (file_exists(public_path($activity->cover_img)) && $activity->cover_img != $this->default_cover_img){
+               unlink(public_path($activity->cover_img));
+           }
+           $activity->cover_img = ImageHelper::store($request->file('cover_img'));
+       }
         $activity->save();
         return redirect()->back();
     }

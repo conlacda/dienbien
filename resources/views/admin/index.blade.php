@@ -155,7 +155,7 @@
                                             <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
                                         </div>
                                         <!-- /.direct-chat-infos -->
-                                        <img class="direct-chat-img" src="./provider/dist/img/user1-128x128.jpg"
+                                        <!-- <img class="direct-chat-img" src="./provider/dist/img/user1-128x128.jpg" -->
                                              alt="message user image">
                                         <!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
@@ -189,7 +189,7 @@
                                             <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
                                         </div>
                                         <!-- /.direct-chat-infos -->
-                                        <img class="direct-chat-img" src="./provider/dist/img/user1-128x128.jpg"
+                                        <!-- <img class="direct-chat-img" src="./provider/dist/img/user1-128x128.jpg" -->
                                              alt="message user image">
                                         <!-- /.direct-chat-img -->
                                         <div class="direct-chat-text">
@@ -223,9 +223,9 @@
                                 <div class="direct-chat-contacts">
                                     <ul class="contacts-list">
                                         <li>
-                                            <a href="#">
+                                            <!-- <a href="#">
                                                 <img class="contacts-list-img"
-                                                     src="./provider/dist/img/user1-128x128.jpg">
+                                                     src="./provider/dist/img/user1-128x128.jpg"> -->
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -255,9 +255,9 @@
                                         </li>
                                         <!-- End Contact Item -->
                                         <li>
-                                            <a href="#">
+                                            <!-- <a href="#">
                                                 <img class="contacts-list-img"
-                                                     src="./provider/dist/img/user3-128x128.jpg">
+                                                     src="./provider/dist/img/user3-128x128.jpg"> -->
 
                                                 <div class="contacts-list-info">
                           <span class="contacts-list-name">

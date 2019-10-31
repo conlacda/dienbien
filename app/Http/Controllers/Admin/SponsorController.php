@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Activity;
 use App\Http\Controllers\Controller;
+use App\Repositories\ImageHelper;
 use App\Sponsor;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
@@ -43,10 +44,8 @@ class SponsorController extends Controller
     {
         $post = new Sponsor();
         $post->name = $request['name'];
-        if (isset($request['cover_img'])) {
-            $file = $request['cover_img'];
-            $path = $file->store('public/sponsors');
-            $sponsor->cover_img = Storage::url($path);
+        if ($request->hasFile('cover_img')) {
+            $post->cover_img = ImageHelper::store($request->file('cover_img'));
         }
         $post->link = $request['link'];
         $post->introduction = $request['introduction'];
@@ -98,9 +97,7 @@ class SponsorController extends Controller
             {
                 unlink(public_path($sponsor->cover_img));
             }
-            $file = $request['cover_img'];
-            $path = $file->store('public/sponsors');
-            $sponsor->cover_img = Storage::url($path);
+            $sponsor->cover_img = ImageHelper::store($request->file('cover_img'));
         }
         $sponsor->save();
         return redirect()->back()->with('message', 'Cập nhật thành công');

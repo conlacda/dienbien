@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\NewsPost;
+use App\Repositories\ImageHelper;
 use App\Sponsor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -30,10 +31,8 @@ class NewsPostController extends Controller
         $post->content = $request['content'];
         $post->slug = Str::slug($post->title, '-') . uniqid();
         // Cover img
-        if (isset($request['cover_img'])) {
-            $file = $request['cover_img'];
-            $path = $file->store('public/news');
-            $post->cover_img = Storage::url($path);
+        if ($request->hasFile('cover_img')) {
+            $post->cover_img = ImageHelper::store($request->file('cover_img'));
         }
         $post->save();
         return redirect()->route('admin.news.index')->with('message', 'Tạo bài viết thành công');
@@ -62,9 +61,10 @@ class NewsPostController extends Controller
             {
                 unlink(public_path($news->cover_img));
             }
-            $file = $request['cover_img'];
-            $path = $file->store('public/news');
-            $news->cover_img = Storage::url($path);
+//            $file = $request['cover_img'];
+//            $path = $file->store('public/news');
+//            $news->cover_img = Storage::url($path);
+            $news->cover_img = ImageHelper::store($request->file('cover_img'));
         }
         $news->save();
         return redirect()->back()->with('message', 'Cập nhật thành công');
