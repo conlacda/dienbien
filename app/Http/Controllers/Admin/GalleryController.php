@@ -15,7 +15,7 @@ class GalleryController extends Controller
     public function index()
     {
         $galleries = Gallery::paginate(21);
-        return view('admin.galleries.index',compact('galleries'));
+        return view('admin.galleries.index', compact('galleries'));
     }
 
     public function create()
@@ -44,27 +44,50 @@ class GalleryController extends Controller
 
     }
 
-    public function update(Request $request,$slug)
+    public function update(Request $request, $slug)
     {
-        $gallery = Gallery::where('slug',$slug)->first();
-        if($request->hasFile('album')){
-            for($i=0;$i<count($request->file('album'));$i++){
+        $gallery = Gallery::where('slug', $slug)->first();
+        if ($request->hasFile('album')) {
+            for ($i = 0; $i < count($request->file('album')); $i++) {
                 $img = new Image();
                 $img->gallery_id = $gallery->id;
                 $img->link = ImageHelper::store($request->file('album')[$i]);
                 $img->save();
             }
         }
-        return redirect()->back()->with( ['message' => 'Cập nhật thành công']);
+        return redirect()->back()->with(['message' => 'Cập nhật thành công']);
     }
 
     public function show($slug)
     {
-        $gallery = Gallery::where('slug',$slug)->first();
-        return view('admin.galleries.show',compact('gallery'));
+        $gallery = Gallery::where('slug', $slug)->first();
+        if ($gallery == NULL){
+            abort(404);
+        }
+        return view('admin.galleries.show', compact('gallery'));
     }
-    public function destroy()
-    {
 
+    public function destroy($slug)
+    {
+        $gallery = Gallery::where('slug', $slug)->first();
+        $images = $gallery->images;
+        foreach ($images as $image) {
+            if (file_exists(public_path($image->link)) && $image->link != null) {
+                unlink(public_path($image->link));
+            }
+        }
+        Image::where('gallery_id',$gallery->id)->delete();
+        $gallery->delete();
+        return response()->json([
+            'message' => 'success',
+        ]);
+    }
+
+    public function deleteImage($id)
+    {
+        Image::where('id',$id)->delete();
+        return response()->json([
+            "messenger" => "success"
+        ]);
     }
 }

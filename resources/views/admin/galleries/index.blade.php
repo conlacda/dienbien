@@ -81,7 +81,7 @@
 @push('js')
     @if(session()->has('message'))
         <script>
-            alertify.alert("{{ session()->get('message') }}").set({title: "Cập nhật nội dung bài viết thành công "});
+            alertify.alert("{{ session()->get('message') }}").set({title: "Tải ảnh lên thành công !"});
         </script>
     @endif
 @endpush

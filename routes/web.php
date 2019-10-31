@@ -59,7 +59,7 @@ Route::namespace('Admin')->prefix('/admin')->middleware('auth')->name('admin.')-
     Route::resource('sponsors','SponsorController');
     Route::resource('news','NewsPostController');
     Route::resource('galleries','GalleryController');
-
+    Route::delete('/images/{id}','GalleryController@deleteImage')->name('delete-image');
 });
 
 Auth::routes();

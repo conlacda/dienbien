@@ -98,7 +98,7 @@
                 <div class="card-body p-0" style="display: block;">
                     <div class="row">
                         @foreach($gallery->images as $index => $image)
-                            <div class="col-md-4 col-lg-4">
+                            <div class="col-md-4 col-lg-4" id="image-{{$image->id}}">
                                 <div class="polaroid">
                                     <img src="{{$image->link}}" alt="Ảnh thứ {{$index+1}}"
                                          style="width:100%;height: 300px" class="myImg">
@@ -121,7 +121,7 @@
                                             </div>
 
                                             <div class="col-md-6">
-                                                <button class="btn btn-danger">Xóa</button>
+                                                <button class="btn btn-danger" onclick="deleteImage({{$image->id}})" >Xóa</button>
                                             </div>
                                         </div>
                                     </div>
@@ -175,10 +175,24 @@
         });
         $('#delete-album').click(function(){
             if (confirm('Xóa album ảnh này! Sau khi xóa album không thể khôi phục , bạn có chắc không!')){
-                alert('co xoa');
-            } else{
-                alert('ko xoa');
-            }
+                axios.delete('{{route("admin.galleries.destroy",['gallery' => $gallery->slug])}}',{
+                }).then(function (res) {
+                    window.location.replace("{{route('admin.galleries.index')}}");
+                }).catch(function (err) {
+                    alert('Có lỗi xảy ra ! Hãy thử lại sau .');
+                    console.log(err.data);
+                })
+            };
         })
+        function deleteImage(id) {
+            console.log(id);
+            axios.delete('/admin/images/' + id,{
+            }).then(function (res) {
+                $('#image-' + id).hide();
+            }).catch(function (err) {
+                alert('Co loi xay ra');
+                console.log(err.data);
+            })
+        }
     </script>
 @endpush
