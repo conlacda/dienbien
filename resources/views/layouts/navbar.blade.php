@@ -153,8 +153,8 @@
 
                             <div class="simplemenu">
                                 <ul>
-                                    <li IconUrl="" Contents="" XTarget="" Role="" class="KDPLhome" catid=""><a
-                                            href="/">Home</a></li>
+                                    <li IconUrl="" Contents="" XTarget="" Role="" class="" catid=""><a href="/">
+                                            <i class="fas fa-home"></i></a></li>
                                     <li IconUrl="" Contents="" XTarget="" Role="" class="" catid=""><a href="/">Trang
                                             chủ</a></li>
                                     <li><a href="{{route('introduction.index')}}">Giới thiệu</a>

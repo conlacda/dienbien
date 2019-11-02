@@ -103,6 +103,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('admin.videos.index')}}" class="nav-link {{ App\Helpers\RouteHelper::isActiveRoute('videos') }}">
+                        <i class="fas fa-video"></i>
+                        <p>
+                            Video
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('logout') }}"
                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                        class="nav-link">

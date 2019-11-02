@@ -68,31 +68,31 @@
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Địa chỉ</label>
                                                     <input type="email" class="form-control" id="address-u"
-                                                           placeholder="Nhập vào địa chỉ"
+                                                           placeholder="Nhập vào địa chỉ" name="address"
                                                            value="{{$contactInfo[0]->address}}">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Số điện thoại</label>
                                                     <input type="text" class="form-control" id="phone-u"
-                                                           placeholder="Nhập vào số điện thoại"
+                                                           placeholder="Nhập vào số điện thoại" name="phone"
                                                            value="{{$contactInfo[0]->phone}}">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Đường dây nóng</label>
                                                     <input type="text" class="form-control" id="hotline-u"
-                                                           placeholder="Nhập vào số đường dây nóng"
+                                                           placeholder="Nhập vào số đường dây nóng" name="hotline"
                                                            value="{{$contactInfo[0]->hotline}}">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Tài khoản ngân hàng</label>
-                                                    <input type="text" class="form-control" id="backaccount-u"
+                                                    <input type="text" class="form-control" id="backaccount-u" name="bank_account"
                                                            placeholder="Nhập vào số tài khoản - chi nhánh ngân hàng"
                                                            value="{{$contactInfo[0]->bank_account}}">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Địa chỉ facebook</label>
                                                     <input type="text" class="form-control" id="fb_link-u"
-                                                           placeholder="Nhập vào đường link facebook"
+                                                           placeholder="Nhập vào đường link facebook" name="fb_link"
                                                            value="{{$contactInfo[0]->fb_link}}">
                                                 </div>
                                             </div>
@@ -152,7 +152,7 @@
                 'phone': $('#phone-u').val(),
                 'hotline': $('#hotline-u').val(),
                 'bank_account': $('#backaccount-u').val(),
-                'fb_link': $('fb_link-u').val()
+                'fb_link': $('#fb_link-u').val()
             }).then(function (res) {
                 $('#edit-form').modal('hide');
                 alertify.alert(res.data.message).set({title: "Cập nhật thông tin liên hệ"});

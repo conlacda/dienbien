@@ -283,7 +283,7 @@
                                             <ul>
                                                 <li><a href="tel:{{$contact->phone}}">Số điện
                                                         thoai: {{$contact->phone}}</a></li>
-                                                <li><a href="{{$contact->fb_link}}">Đường link facebook</a></li>
+                                                <li><a href="{{$contact->fb_link}}" target="_blank">Đường link facebook</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -577,101 +577,18 @@
                                                 <div id="carousel">
                                                     <div id="slides">
                                                         <ul>
-
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a href="/thu-vien-anh/chum-anh-ve-tre-em-dan-toc-thieu-so_t118c19n1798"
-                                                                       title="Chùm ảnh về trẻ em dân tộc thiểu số ">
-                                                                        <img alt="Chùm ảnh về trẻ em dân tộc thiểu số "
-                                                                             src="/images/0/NEWS_IMAGES/thanglb/2018_6/10516720_4594548398081_1500581264801807417_n.jpg"/>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a href="/thu-vien-anh/chum-anh-ve-nha-noi-tru-cho-tre-em-vung-cao-do-quy-bao-tro-tre-em-viet-nam-ho-tro_t118c19n1187"
-                                                                       title="Chùm ảnh về nhà nội trú cho trẻ em vùng cao do Quỹ Bảo trợ trẻ em Việt Nam hỗ trợ">
-                                                                        <img
-                                                                            alt="Chùm ảnh về nhà nội trú cho trẻ em vùng cao do Quỹ Bảo trợ trẻ em Việt Nam hỗ trợ"
-                                                                            src="/images/0/NEWS_IMAGES/thanglb/2018_6/10532974_4601144562981_1847700361011866638_n.jpg"/>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a href="/thu-vien-anh/chum-anh-gap-mat-dai-bieu-tre-em-co-hoan-canh-dac-biet-lan-thu-8-phan-2_t118c19n858"
-                                                                       title="Chùm ảnh: Gặp mặt đại biểu trẻ em có hoàn cảnh đặc biệt lần thứ 8 (phần 2)">
-                                                                        <img
-                                                                            alt="Chùm ảnh: Gặp mặt đại biểu trẻ em có hoàn cảnh đặc biệt lần thứ 8 (phần 2)"
-                                                                            src="/images/0/NEWS_IMAGES/minhhanh/2015_6/dsc_6028.JPG"/>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a href="/thu-vien-anh/chum-anh-gap-mat-dai-bieu-tre-em-co-hoan-canh-dac-biet-lan-thu-8-phan-1_t118c19n767"
-                                                                       title="Chùm ảnh: Gặp mặt đại biểu trẻ em có hoàn cảnh đặc biệt lần thứ 8 (phần 1)">
-                                                                        <img
-                                                                            alt="Chùm ảnh: Gặp mặt đại biểu trẻ em có hoàn cảnh đặc biệt lần thứ 8 (phần 1)"
-                                                                            src="/images/0/NEWS_IMAGES/minhhanh/2015_5/img_0593.JPG"/>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a href="/thu-vien-anh/chuong-trinh-tai-tro-giao-duc-som-kidsmart_t118c19n441"
-                                                                       title="Chương trình Tài trợ Giáo dục sớm KidSmart">
-                                                                        <img
-                                                                            alt="Chương trình Tài trợ Giáo dục sớm KidSmart"
-                                                                            src="/images/0/NEWS_IMAGES/thanglb/2014_7/img_3962.JPG"/>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a href="/thu-vien-anh/tre-em-hom-nay-the-gioi-ngay-mai_t118c19n176"
-                                                                       title="Trẻ em hôm nay thế giới ngày mai">
-                                                                        <img alt="Trẻ em hôm nay thế giới ngày mai"
-                                                                             src="/images/0/NEWS_IMAGES/host/2014_5/tre_em_2.jpg"/>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a href="/thu-vien-anh/tre-em-hoc-tap-vui-choi_t118c19n174"
-                                                                       title="Trẻ em học tập vui chơi">
-                                                                        <img alt="Trẻ em học tập vui chơi"
-                                                                             src="/images/0/NEWS_IMAGES/host/2014_5/tre_em.jpg"/>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a href="/thu-vien-anh/tre-em-vui-choi_t118c19n79"
-                                                                       title="Trẻ em vui chơi">
-                                                                        <img alt="Trẻ em vui chơi"
-                                                                             src="/images/0/NEWS_IMAGES/host/2014_5/951dfab3ab12c7img.jpg"/>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a href="/thu-vien-anh/tre-em-vung-cao_t118c19n77"
-                                                                       title="Trẻ em vùng cao">
-                                                                        <img alt="Trẻ em vùng cao"
-                                                                             src="/images/0/NEWS_IMAGES/host/2014_5/tre_em_vung_cao_6438.jpg"/>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-
+                                                            @foreach($galleries as $gallery)
+                                                                <li>
+                                                                    <div class="imgnews">
+                                                                        <a href="{{route('gallery.show',['slug' => $gallery->slug])}}"
+                                                                           title="{{$gallery->slug}}">
+                                                                            <img style="width: 129px;height: 86px"
+                                                                                alt="Chùm ảnh: {{$gallery->title}} "
+                                                                                src="{{$gallery->images[0]->link}}"/>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                            @endforeach
                                                         </ul>
                                                     </div>
                                                 </div>

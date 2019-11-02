@@ -42,12 +42,12 @@ Route::namespace('Guest')->group(function () {
 
     Route::name('gallery.')->prefix('/thu-vien-anh')->group(function(){
        Route::get('/','GalleryController@index')->name('index');
-
+       Route::get('/{slug}/show','GalleryController@show')->name('show');
     });
 });
 
 // TODO middleware role (tech fest)
-Route::namespace('Admin')->prefix('/admin')->middleware('auth')->name('admin.')->group(function(){
+Route::namespace('Admin')->prefix('/admin')->middleware('auth','admin')->name('admin.')->group(function(){
     Route::get('/','AdminController@index')->name('index');
     Route::resource('introductions','IntroductionController');
     Route::resource('children1s','Children1Controller');
@@ -60,8 +60,13 @@ Route::namespace('Admin')->prefix('/admin')->middleware('auth')->name('admin.')-
     Route::resource('news','NewsPostController');
     Route::resource('galleries','GalleryController');
     Route::delete('/images/{id}','GalleryController@deleteImage')->name('delete-image');
+    Route::resource('/videos','VideoController');
+
 });
 
+Route::namespace('Member')->prefix('/member')->middleware('auth','member')->name('member.')->group(function (){
+   Route::get('/','MHomeController@index')->name('index');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

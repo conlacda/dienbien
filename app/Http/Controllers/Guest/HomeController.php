@@ -6,6 +6,7 @@ use App\Activity;
 use App\Children2;
 use App\Children3;
 use App\ContactInformation;
+use App\Gallery;
 use App\Http\Controllers\Controller;
 use App\NewsPost;
 
@@ -21,6 +22,10 @@ class HomeController extends Controller
         $children3New = Children3::latest()->first();
         $contact = ContactInformation::latest()->first();
         $news = NewsPost::take(9)->orderBy('id','desc')->get();
-        return view('index',compact('children2New','children3New','contact','news'));
+        $galleries = Gallery::orderBy('id','DESC')->with('images')->take(4)->get();
+        $galleries = $galleries->filter(function ($item) {
+            return count($item->images) > 0;
+        })->values();
+        return view('index',compact('children2New','children3New','contact','news','galleries'));
     }
 }

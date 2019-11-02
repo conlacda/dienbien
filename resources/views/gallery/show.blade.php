@@ -37,7 +37,7 @@
                                 <div style="clear:both;"></div>
                                 <div class="content">
                                     <i class="fas fa-home" style="color:white;"></i>
-                                    <a style="color: white">Thư viện ảnh</a>
+                                    <a style="color: white">{{$gallery->title}}</a>
                                 </div>
                             </div>
                         </div>
@@ -52,25 +52,29 @@
                                     <div class="contentx">
                                         <div id="dnn_ctr540_Main_UserNewsImages_up">
 
-                                            @foreach($galleries as $gallery)
-                                                <div class="xitem">
-                                                    <div class="xboxitem">
-                                                        <a href="{{route('gallery.show',['slug' => $gallery->slug ])}}">
-                                                            <div class="ximgdiv"><img class="ximg"
-                                                                                      alt="{{$gallery->title}}"
-                                                                                      src="{{ count($gallery->images) > 0 ? $gallery->images[0]->link : \App\Image::DEFAULT_ALBUM_IMAGE }}">
-                                                            </div>
-                                                            <div class="xtitlez">
-                                                                <span>{{$gallery->title}} </span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            @endforeach
 
+                                            @if (count($gallery->images) == 0)
+                                                <p>Album ảnh này hiện chưa có ảnh nào !</p>
+                                            @else
+                                                @foreach($gallery->images as $index => $image)
+                                                    <div class="xitem">
+                                                        <div class="xboxitem">
+                                                            <a href="#">
+                                                                <div class="ximgdiv"><img class="ximg"
+                                                                                          alt="Ảnh {{$index}}"
+                                                                                          src="{{$image->link }}">
+                                                                </div>
+                                                                <div class="xtitlez">
+                                                                    <span>Chùm ảnh về trẻ em dân tộc thiểu số </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            @endif
                                             <div style="clear:both; height:10px;"></div>
                                             <div class="PagingContainer">
-                                                {{$galleries->links()}}
+
                                             </div>
 
                                         </div>
