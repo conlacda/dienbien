@@ -44,6 +44,11 @@ Route::namespace('Guest')->group(function () {
        Route::get('/','GalleryController@index')->name('index');
        Route::get('/{slug}/show','GalleryController@show')->name('show');
     });
+
+    Route::name('video.')->prefix('videos')->group(function(){
+        Route::get('/','VideoController@index')->name('index');
+//        Route::get('/{slug}/show','VideoController@show')->name('show');
+    });
 });
 
 // TODO middleware role (tech fest)

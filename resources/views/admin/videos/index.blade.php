@@ -68,6 +68,66 @@
                                         <video width="100%" controls>
                                             <source src="{{$video->link}}" type="video/mp4">
                                         </video>
+                                        <div class="container">
+                                            <!-- Button trigger modal -->
+                                            <a data-toggle="modal" href="#"
+                                                    data-target="#video-{{$video->id}}">
+                                                {{substr($video->title,0,80) . '...'}}
+                                            </a>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="video-{{$video->id}}" tabindex="-1" role="dialog"
+                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Thông tin chi tiết về video</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+
+                                                            <form class="custom-content" method="POST" action="{{route('admin.videos.update',['video' => $video->id])}}" enctype="multipart/form-data">
+                                                                {{csrf_field()}}
+                                                                {{method_field('PUT')}}
+                                                                <div class="form-group row">
+                                                                    <label for="title">Tên/Tiêu đề video</label>
+                                                                    <input type="text" class="form-control" id="title" placeholder="" name="title" required value="{{$video->title}}"
+                                                                           maxlength="250">
+                                                                    {{--                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--}}
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <label for="place">Địa điểm</label>
+                                                                    <input type="text" class="form-control" name="place" id="place" value="{{$video->place}}"
+                                                                           placeholder="Địa điểm có trong video" maxlength="250">
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <label for="note">Ghi chú / mô tả thêm </label>
+                                                                    <input type="text" class="form-control" name="note" id="note" value="{{$video->note}}"
+                                                                           placeholder="Ghi chú thêm về video nếu có">
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <p>Cập nhật vào: {{$video->updated_at}}</p>
+                                                                </div>
+                                                                <button type="submit" class="btn btn-primary row" style="float: left">Cập nhật thông tin video</button>
+                                                            </form>
+
+
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-outline-info"
+                                                                    data-dismiss="modal">Đóng
+                                                            </button>
+                                                            <button type="button" class="btn btn-danger" id="delete-button" data-id="{{$video->id}}">Xóa video
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach
@@ -84,9 +144,23 @@
     </div>
 @endsection
 @push('js')
+    <script>
+        $('#delete-button').click(function () {
+            let videoId = $(this).attr('data-id');
+            if (confirm('Bạn có thực sự muốn xóa video này!')){
+                axios.delete("/admin/videos/" + videoId ,{
+
+                }).then(function (res) {
+                    location.reload();
+                }).catch(function (err) {
+                    console.log(err.data);
+                })
+            }
+        })
+    </script>
     @if(session()->has('message'))
         <script>
-            alertify.alert("{{ session()->get('message') }}").set({title: "Tải ảnh lên thành công !"});
+            alertify.alert("{{ session()->get('message') }}").set({title: "Thông báo !"});
         </script>
     @endif
 @endpush

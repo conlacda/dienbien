@@ -9,6 +9,9 @@ use App\ContactInformation;
 use App\Gallery;
 use App\Http\Controllers\Controller;
 use App\NewsPost;
+use App\Video;
+
+// Controller ở trang chủ ngoài cùng
 
 class HomeController extends Controller
 {
@@ -26,6 +29,7 @@ class HomeController extends Controller
         $galleries = $galleries->filter(function ($item) {
             return count($item->images) > 0;
         })->values();
-        return view('index',compact('children2New','children3New','contact','news','galleries'));
+        $videos = Video::take(4)->get();
+        return view('index',compact('children2New','children3New','contact','news','galleries','videos'));
     }
 }

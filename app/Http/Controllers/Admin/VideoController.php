@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
+use App\Repositories\ImageHelper;
 use App\Video;
 use Illuminate\Http\Request;
 
@@ -15,7 +17,7 @@ class VideoController extends Controller
     public function index()
     {
         $videos = Video::paginate(9);
-        return view('admin.videos.index',compact('videos'));
+        return view('admin.videos.index', compact('videos'));
     }
 
     /**
@@ -36,7 +38,19 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        dd('sdf');
+        $video = new Video();
+        if ($request->hasFile('video')) {
+            $video->fill($request->all());
+            $video->link = ImageHelper::store($request->file('video'));
+            $video->save();
+            return redirect()->route('admin.videos.index')->with([
+                'message' => 'Tải lên video thành công',
+            ]);
+        }
+        return redirect()->route('admin.videos.index')->with([
+            'message' => 'Có lỗi xảy ra! Thử lại sau .',
+        ]);
+
     }
 
     /**
@@ -70,7 +84,12 @@ class VideoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $video = Video::findOrFail($id);
+        $video->update($request->all());
+        $video->save();
+        return redirect()->back()->with([
+           'message' => "Đã cập nhật thông tin video",
+        ]);
     }
 
     /**
@@ -81,6 +100,18 @@ class VideoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $video = Video::where('id',$id)->first();
+        if ($video != NULL){
+            if(file_exists(public_path($video->link)) && $video->link != null) {
+                unlink(public_path($video->link));
+            }
+            $video->delete();
+            return response()->json([
+               'message' => "Đã xóa video",
+            ]);
+        } else
+            return response()->json([
+               'message' => 'Không tìm thấy video này !',
+            ]);
     }
 }

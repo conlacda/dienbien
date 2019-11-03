@@ -5,10 +5,11 @@ namespace App\Http\Controllers\Guest;
 
 
 use App\ContactInformation;
+use App\Http\Controllers\Controller;
 use App\Sponsor;
 use Illuminate\Database\Eloquent\Model;
 
-class SponsorController extends Model
+class SponsorController extends Controller
 {
     public function __construct()
     {

@@ -1,5 +1,19 @@
 @extends('app')
+@push('css')
+    <style>
+        .my-title {
+            background-color: #e36f26;
+            color: white;
+            padding: 0 10px;
+            margin-bottom: 2px;
+            height: 30px;
+        }
 
+        .video-play {
+
+        }
+    </style>
+@endpush
 @section('content')
 
 
@@ -218,7 +232,7 @@
                                         <div class="xcate">
                                             <div class="xparent">
                                                 <div class="xlink">
-                                                    <span>Hỗ trợ thục hiện quyền trẻ em</span>
+                                                    <span>//TODO  2 tab thông tin trẻ em </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -283,7 +297,8 @@
                                             <ul>
                                                 <li><a href="tel:{{$contact->phone}}">Số điện
                                                         thoai: {{$contact->phone}}</a></li>
-                                                <li><a href="{{$contact->fb_link}}" target="_blank">Đường link facebook</a></li>
+                                                <li><a href="{{$contact->fb_link}}" target="_blank">Đường link
+                                                        facebook</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -583,8 +598,8 @@
                                                                         <a href="{{route('gallery.show',['slug' => $gallery->slug])}}"
                                                                            title="{{$gallery->slug}}">
                                                                             <img style="width: 129px;height: 86px"
-                                                                                alt="Chùm ảnh: {{$gallery->title}} "
-                                                                                src="{{$gallery->images[0]->link}}"/>
+                                                                                 alt="Chùm ảnh: {{$gallery->title}} "
+                                                                                 src="{{$gallery->images[0]->link}}"/>
                                                                         </a>
                                                                     </div>
                                                                 </li>
@@ -626,6 +641,61 @@
                                 <!-- End_Module_520 -->
                             </div>
                             <div style="clear:both;"></div>
+                        </div>
+
+
+                        {{--                        <div class="DnnModule DnnModule-TNNewsSolution DnnModule-520"><a name="520"></a>--}}
+                        {{--                            <div id="dnn_ctr520_ContentPane"><!-- Start_Module_520 -->--}}
+                        {{--                                <div id="dnn_ctr520_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">--}}
+                        {{--                                    <div class="tnbvdemo_wrap mid520">--}}
+                        {{--                                        <div class="xcaption">--}}
+                        {{--                                            <div class="xtext">--}}
+                        {{--                                                <a href="/video_t215c18">--}}
+                        {{--                                                    Video--}}
+                        {{--                                                </a>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div style="clear:both"></div>--}}
+                        {{--                                        <div id="player" class="xboxvideo">--}}
+                        {{--                                            <embed height="180" width="320"--}}
+                        {{--                                                   flashvars="file=/Portals/0/VIDEO/2019_6/ps_thang_hanh_dong_vi_tre_em.flv&amp;height=180&amp;width=320&amp;image=/DesktopModules/TNNewsSolution/swfplayer/logo.jpg&amp;autostart=false"--}}
+                        {{--                                                   allowscriptaccess="always" wmode="transparent" allowfullscreen="true"--}}
+                        {{--                                                   quality="high" bgcolor="#000000" name="movie_player" id="playerID"--}}
+                        {{--                                                   src="/DesktopModules/TNNewsSolution/swfplayer/player.swf"--}}
+                        {{--                                                   type="application/x-shockwave-flash">--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="xvideotitle">Phóng sự Tháng Hành động vì trẻ em và Giải đá bóng vô--}}
+                        {{--                                            địch Quốc gia cho trẻ em có HCĐB năm 2019--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div style="clear: both; "></div>--}}
+                        {{--                                    </div>--}}
+                        {{--                                    <div style="clear: both;"></div>--}}
+
+
+                        {{--                                    <div style="clear: both;">--}}
+                        {{--                                    </div>--}}
+
+
+                        {{--                                </div><!-- End_Module_520 --></div>--}}
+                        {{--                            <div style="clear:both;"></div>--}}
+                        {{--                        </div>--}}
+
+                        <div>
+                            <div class='my-title'>
+                                <a href="{{route('video.index')}}" style="color: white">
+                                    VIDEO
+                                </a>
+                            </div>
+                            @if(count($videos) == 0)
+                                <p>Chưa có video nào </p>
+                            @else
+                                <div class="video-play">
+                                    <video width="320" height="240" controls>
+                                        <source src="{{$videos[0]->link}}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            @endif
                         </div>
                         <div class="DnnModule DnnModule-TNNewsSolution DnnModule-524"><a name="524"></a>
                             <div id="dnn_ctr524_ContentPane">

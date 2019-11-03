@@ -12,6 +12,11 @@
             text-align: center;
             padding: 10px 20px;
         }
+
+        .custom-content {
+            padding: 10px;
+        }
+
     </style>
 @endpush
 @section('content')
@@ -21,9 +26,8 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Quản lý thư viện video</h1>
-                        <a role="button" href="{{route('admin.videos.create')}}" class="btn btn-success"><i
-                                class="fas fa-plus"></i>Thêm video mới</a>
+                        <h1>Thêm video mới</h1>
+                        <p></p>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -43,19 +47,39 @@
                 <div class="card-header">
                     <h3 class="card-title">Danh sách video</h3>
 
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
-                                title="Collapse">
-                            <i class="fas fa-minus"></i></button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip"
-                                title="Remove">
-                            <i class="fas fa-times"></i></button>
-                    </div>
                 </div>
-                <div class="card-body p-0" style="display: block;">
-                    <div class="row">
+                <div class="card-body p-0">
+                    <form class="custom-content" method="POST" action="{{route('admin.videos.store')}}" enctype="multipart/form-data">
+                        {{csrf_field()}}
+                        <div class="form-group">
+                            <label for="title">Tên/Tiêu đề video</label>
+                            <input type="text" class="form-control" id="title" placeholder="" name="title" required
+                                   maxlength="250">
+                            {{--                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--}}
+                        </div>
+                        <div class="form-group">
+                            <label for="place">Địa điểm</label>
+                            <input type="text" class="form-control" name="place" id="place"
+                                   placeholder="Địa điểm có trong video" maxlength="250">
+                        </div>
+                        <div class="form-group">
+                            <label for="note">Ghi chú / mô tả thêm </label>
+                            <input type="text" class="form-control" name="note" id="note"
+                                   placeholder="Ghi chú thêm về video nếu có">
+                        </div>
+                        <div class="form-group">
+                            <label for="video">Video của bạn</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="video" name="video" required
+                                           accept=".mp4,.webm,.mkv,.flv,.vob,.avi,.mov,.qt,.wmv,.yuv,.rm,.rmvb,.asf,.amv,.m4p,.mpg,.mpeg,.mpv,.mpe,.mpeg,.mpg,.m4v,.svi,.3gp,.3g2,.mxf,.roq,.nsv,.flv,.f4v,.f4p,.f4a,.f4b">
+                                    <label class="custom-file-label" for="video">Chọn video của bạn và tải lên</label>
+                                </div>
+                            </div>
+                        </div>
 
-                    </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
                 <!-- /.card-body -->
             </div>
@@ -66,6 +90,15 @@
     </div>
 @endsection
 @push('js')
+    <script>
+        var uploadField = document.getElementById("video");
+        uploadField.onchange = function() {
+            if(this.files[0].size > 10000000){
+                alert("Kích thước file quá lớn không thể tải lên !");
+                this.value = "";
+            };
+        };
+    </script>
     @if(session()->has('message'))
         <script>
             alertify.alert("{{ session()->get('message') }}").set({title: "Tải ảnh lên thành công !"});
