@@ -89,11 +89,7 @@
                                         margin: 0 2px
                                     }
                                 </style>
-                                <div class="TNVLink ">
-                                    <a href="/ung-ho-truc-tuyen_t239c16" tabindex="0"
-                                       style="color: #ffffff; font: 13px/20px Open Sans Semibold; text-transform:uppercase">Ủng
-                                        hộ trực tuyến</a>
-                                </div>
+
                                 <div class="TNVIcon">
                                     @if (Auth::check())
                                         <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
@@ -101,11 +97,19 @@
                                             {{Auth::user()->name}}
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="{{route('admin.index')}}">Trang quản trị</a>
-                                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            @if (Auth::user()->role == \App\User::ROLE['ADMIN'])
+                                                <a class="dropdown-item" href="{{route('admin.index')}}">Trang quản
+                                                    trị</a>
+                                            @else
+                                                <a class="dropdown-item" href="{{route('member.index')}}">Trang quản
+                                                    trị</a>
+                                            @endif
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                                 Đăng xuất
                                             </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                  style="display: none;">
                                                 {{ csrf_field() }}
                                             </form>
                                         </div>

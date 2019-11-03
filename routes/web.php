@@ -26,53 +26,67 @@ Route::namespace('Guest')->group(function () {
             Route::get('/{slug}', 'ChildrenController@slug4')->name('slug4');
         });
     });
-    Route::name('activity.')->prefix('/hoạt-động')->group(function(){
-       Route::get('/','ActivityController@index')->name('index');
-       Route::get('/{slug}','ActivityController@slug')->name('slug');
+    Route::name('activity.')->prefix('/hoạt-động')->group(function () {
+        Route::get('/', 'ActivityController@index')->name('index');
+        Route::get('/{slug}', 'ActivityController@slug')->name('slug');
     });
-    Route::name('sponsor.')->prefix('/nhà-tài-trợ')->group(function(){
-       Route::get('/','SponsorController@index')->name('index');
-       Route::get('/{slug}','SponsorController@slug')->name('slug');
-    });
-
-    Route::name('newspost.')->prefix('/tin-tức')->group(function(){
-       Route::get('/','NewsPostController@index')->name('index');
-       Route::get('/slug','NewsPostController@slug')->name('slug');
+    Route::name('sponsor.')->prefix('/nhà-tài-trợ')->group(function () {
+        Route::get('/', 'SponsorController@index')->name('index');
+        Route::get('/{slug}', 'SponsorController@slug')->name('slug');
     });
 
-    Route::name('gallery.')->prefix('/thu-vien-anh')->group(function(){
-       Route::get('/','GalleryController@index')->name('index');
-       Route::get('/{slug}/show','GalleryController@show')->name('show');
+    Route::name('newspost.')->prefix('/tin-tức')->group(function () {
+        Route::get('/', 'NewsPostController@index')->name('index');
+        Route::get('/slug', 'NewsPostController@slug')->name('slug');
     });
 
-    Route::name('video.')->prefix('videos')->group(function(){
-        Route::get('/','VideoController@index')->name('index');
+    Route::name('gallery.')->prefix('/thu-vien-anh')->group(function () {
+        Route::get('/', 'GalleryController@index')->name('index');
+        Route::get('/{slug}/show', 'GalleryController@show')->name('show');
+    });
+
+    Route::name('video.')->prefix('/videos')->group(function () {
+        Route::get('/', 'VideoController@index')->name('index');
 //        Route::get('/{slug}/show','VideoController@show')->name('show');
+    });
+    Route::name('raise-fund-news.')->prefix('/tin-tức-và-gây-quỹ')->group(function(){
+        Route::get('/','RaiseFundNewsController@index')->name('index');
     });
 });
 
 // TODO middleware role (tech fest)
-Route::namespace('Admin')->prefix('/admin')->middleware('auth','admin')->name('admin.')->group(function(){
-    Route::get('/','AdminController@index')->name('index');
-    Route::resource('introductions','IntroductionController');
-    Route::resource('children1s','Children1Controller');
-    Route::resource('children2s','Children2Controller');
-    Route::resource('children3s','Children3Controller');
-    Route::resource('children4s','Children4Controller');
-    Route::resource('activities','ActivityController');
-    Route::resource('contacts','ContactController');
-    Route::resource('sponsors','SponsorController');
-    Route::resource('news','NewsPostController');
-    Route::resource('galleries','GalleryController');
-    Route::delete('/images/{id}','GalleryController@deleteImage')->name('delete-image');
-    Route::resource('/videos','VideoController');
+Route::namespace('Admin')->prefix('/admin')->middleware('auth', 'admin')->name('admin.')->group(function () {
+    Route::get('/', 'AdminController@index')->name('index');
+    Route::resource('introductions', 'IntroductionController');
+    Route::resource('children1s', 'Children1Controller');
+    Route::resource('children2s', 'Children2Controller');
+    Route::resource('children3s', 'Children3Controller');
+    Route::resource('children4s', 'Children4Controller');
+    Route::resource('activities', 'ActivityController');
+    Route::resource('contacts', 'ContactController');
+    Route::resource('sponsors', 'SponsorController');
+    Route::resource('news', 'NewsPostController');
+    Route::resource('galleries', 'GalleryController');
+    Route::delete('/images/{id}', 'GalleryController@deleteImage')->name('delete-image');
+    Route::resource('/videos', 'VideoController');
 
 });
 
-Route::namespace('Member')->prefix('/member')->middleware('auth','member')->name('member.')->group(function (){
-   Route::get('/','MHomeController@index')->name('index');
+Route::namespace('Member')->prefix('/member')->middleware('auth', 'member')->name('member.')->group(function () {
+    Route::get('/', 'MHomeController@index')->name('index');
+    Route::name('news.')->prefix('bài-đăng')->group(function () {
+        Route::get('/', 'NewsController@index')->name('index');
+        Route::get('/create','NewsController@create')->name('create');
+        Route::post('/store','NewsController@store')->name('store');
+        Route::put('/{id}/update','NewsController@update')->name('update');
+        Route::get('/{id}/edit','NewsController@edit')->name('edit');
+        Route::delete('/{id}/delete','NewsController@destroy')->name('destroy');
+    });
+    Route::name('image.')->prefix('hình-ảnh')->group(function () {
+        Route::get('/', 'ImageController@index')->name('index');
+    });
 });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/test','HomeController@test')->name('test');
+Route::get('/test', 'HomeController@test')->name('test');

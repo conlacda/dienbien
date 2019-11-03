@@ -45,19 +45,14 @@
                         </div>
                         <div style="float:right;">
                                     <span>
-<a href="#" tabindex="0"><img style="margin-top:20px; " src="/images/0/HTML/icon_fb.png"></a>
-<a href="#" tabindex="0"><img style="margin-top:20px" src="/images/0/HTML/icon_twitter.png"></a>
-<a href="#" tabindex="0"><img style="margin-top:20px" src="/images/0/HTML/icon_gplus.png"></a>
+<a href="https://www.facebook.com/Qu%E1%BB%B9-B%E1%BA%A3o-tr%E1%BB%A3-tr%E1%BA%BB-em-t%E1%BB%89nh-%C4%90i%E1%BB%87n-Bi%C3%AAn-456115844746109/" tabindex="0"><img style="margin-top:20px; " src="/images/0/HTML/icon_fb.png"></a>
 </span>
                         </div>
                     </div>
                     <div class="ftRight">
                                 <span>
-<b>Bản quyền thuộc Quỹ <a href="http://btxh.gov.vn/" target="_blank">Bảo trợ</a> trẻ em Việt Nam - 35 Trần Phú, Ba Đình, Hà Nội, Việt Nam </b><br>
-Giấy phép số: 210/GP-TTĐT  do cục PT, TH&amp;TTĐT cấp ngày 09/08/2018<br>
-Tel: (844) 38458568/ 37331223/ 37470037/ 37471260/ 38437640 * Fax: (844) 38438537 <br>
-Email: quytreemvn@molisa.gov.vn * Website: http://nfvc.org.vn * Fanpage: http://facebook.com/nfvc.org.vn<br>
-Thiết kế và phát triển bởi <a tabindex="0" target="_blank" href="http://trinam.com.vn">Trí Nam Jsc</a>
+<b>Facebook của chúng tôi <a href="https://www.facebook.com/Qu%E1%BB%B9-B%E1%BA%A3o-tr%E1%BB%A3-tr%E1%BA%BB-em-t%E1%BB%89nh-%C4%90i%E1%BB%87n-Bi%C3%AAn-456115844746109/" target="_blank">Quỹ bảo trợ trẻ em tỉnh Điện Biên</a></b><br>
+Số điện thoại: 0982356433 <br>
 </span>
                     </div>
                     <div style="clear: both;"></div>

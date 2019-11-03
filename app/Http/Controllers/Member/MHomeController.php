@@ -10,6 +10,6 @@ class MHomeController extends Controller
 {
     public function index()
     {
-        return 'fsd';
+        return view('member.videos.index');
     }
 }

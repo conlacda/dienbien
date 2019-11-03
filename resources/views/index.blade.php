@@ -232,17 +232,15 @@
                                         <div class="xcate">
                                             <div class="xparent">
                                                 <div class="xlink">
-                                                    <span>//TODO  2 tab thông tin trẻ em </span>
+                                                    <span>Thông tin trẻ em</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div style="clear:both"></div>
                                         <div class="xhitem">
                                             <ul>
-                                                <li><a href="/quyen-song-con_t113c33">Quyền sống còn</a></li>
-                                                <li><a href="/quyen-phat-trien_t113c32">Quyền phát triển</a></li>
-                                                <li><a href="/quyen-bao-ve_t113c14">Quyền bảo vệ</a></li>
-                                                <li><a href="/quyen-tham-gia_t113c21">Quyền tham gia</a></li>
+                                                <li><a href="{{route('raise-fund-news.index',['type' => 'member'])}}">Tin tức về trẻ em</a></li>
+                                                <li><a href="{{route('raise-fund-news.index',['type' => 'admin'])}}">Bài đăng gây quỹ từ người dùng</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -552,8 +550,11 @@
                             <div id="dnn_ctr562_ContentPane">
                                 <!-- Start_Module_562 -->
                                 <div id="dnn_ctr562_ModuleContent" class="DNNModuleContent ModTNHtmlC">
-                                    <a href="http://nfvc.org.vn/tin-dia-phuong/chuong-trinh-ao-am-mua-dong-cho-tre-em-dan-toc-thieu-so_t114c28n2015#.XRM6Ex83vIU"><img
-                                            src="/images/0/ao-am3.png" style=""></a><br>
+                                 <p style="background-color: yellow">Mọi cá nhân, tổ chức quan tâm đến quỹ xin vui lòng liên hệ fanpage
+                                     <a href="https://www.facebook.com/Qu%E1%BB%B9-B%E1%BA%A3o-tr%E1%BB%A3-tr%E1%BA%BB-em-t%E1%BB%89nh-%C4%90i%E1%BB%87n-Bi%C3%AAn-456115844746109/">tại đây</a>
+                                      <br>Hotline: 0982356433
+                                     <br> Chúng tôi xin chân thành cảm ơn
+                                 </p>
 
                                     <span id="dnn_ctr562_Main_lblMessage" style="clear: both;"></span>
 
