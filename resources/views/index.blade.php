@@ -433,8 +433,7 @@
                                         <div class="xcate">
                                             <div class="xparent">
                                                 <div class="xlink">
-                                                    <a href="/tin-tuc-su-kien_t113c31"><span
-                                                            id="dnn_ctr535_Main_UserNewsBoxCategory_vs3_NoChild__MainCategoryName">Tin tức - Sự kiện</span></a>
+                                                    <a href="{{route('newspost.index')}}"><span>Tin tức - Sự kiện</span></a>
                                                 </div>
                                             </div>
                                             <div id="dnn_ctr535_Main_UserNewsBoxCategory_vs3_NoChild__DanhMucCon">
@@ -496,21 +495,43 @@
                                         <div class="xnews">
                                             <div class="xleft">
                                                 <div style="padding:10px;">
+{{--                                                    Nội dung tin tức - sự kiện cột trái , dưới là cột phải--}}
                                                     @if (count($news)>=1 )
                                                         <div class="imgnews">
-                                                            <a href="#">
+                                                            <a href="#" data-toggle="modal" data-target="#post-{{$news[0]->id}}">
                                                                 <img alt="{{$news[0]->title}}"
                                                                      src="{{$news[0]->cover_img}}"/>
                                                             </a>
                                                         </div>
                                                         <h2 class="xtitle">
-                                                            <a href="#" title="">
+                                                            <a href="#" title=""  data-toggle="modal" data-target="#post-{{$news[0]->id}}">
                                                                 <div class="title-hidden">
                                                                     {!! $news[0]->title !!}
                                                                 </div>
                                                             </a>
                                                         </h2>
-
+{{--                                                    -----------------}}
+                                                        <div class="modal fade" id="post-{{$news[0]->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog modal-lg" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">Nội dung bài viết</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <img src="{{$news[0]->cover_img}}">
+                                                                        <p style="color: orange">{{$news[0]->title}}</p>
+                                                                        {!! $news[0]->content !!}
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Xong</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+{{--                                                    ----}}
                                                         <div class="summary-hidden xdes">
                                                             {!! $news[0]->content !!}
                                                         </div>
@@ -523,11 +544,33 @@
                                                     @foreach($news as $post)
                                                         <div class="xitem">
                                                             <h2 class="xlink">
-                                                                <a href="#" title="#">
+                                                                <a href="#" title="#" data-toggle="modal" data-target="#post1-{{$post->id}}">
                                                                     {{$post->title}}
                                                                 </a>
                                                             </h2>
                                                         </div>
+{{--                                                        Modal -----------}}
+                                                        <div class="modal fade" id="post1-{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog modal-lg" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">Nội dung bài viết</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <img src="{{$post->cover_img}}">
+                                                                        <p style="color: orange">{{$post->title}}</p>
+                                                                        {!! $post->content !!}
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Xong</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+{{--                                                        --}}
                                                     @endforeach
                                                 @endif
 
