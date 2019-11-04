@@ -10,6 +10,6 @@ class MHomeController extends Controller
 {
     public function index()
     {
-        return view('member.videos.index');
+        return redirect()->route('member.news.index');
     }
 }

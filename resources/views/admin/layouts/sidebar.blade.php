@@ -111,6 +111,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('admin.user-post.index')}}" class="nav-link {{ App\Helpers\RouteHelper::isActiveRoute('user-post') }}">
+                        <i class="fas fa-user-friends"></i>
+                        <p>
+                            Bài đăng từ người dùng
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('logout') }}"
                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                        class="nav-link">

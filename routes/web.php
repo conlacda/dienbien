@@ -54,7 +54,7 @@ Route::namespace('Guest')->group(function () {
     });
 });
 
-// TODO middleware role (tech fest)
+
 Route::namespace('Admin')->prefix('/admin')->middleware('auth', 'admin')->name('admin.')->group(function () {
     Route::get('/', 'AdminController@index')->name('index');
     Route::resource('introductions', 'IntroductionController');
@@ -69,7 +69,9 @@ Route::namespace('Admin')->prefix('/admin')->middleware('auth', 'admin')->name('
     Route::resource('galleries', 'GalleryController');
     Route::delete('/images/{id}', 'GalleryController@deleteImage')->name('delete-image');
     Route::resource('/videos', 'VideoController');
-
+    Route::get('/user-posts/','UserPostController@index')->name('user-post.index');
+    Route::put('/user-posts/{id}/approve','UserPostController@approve')->name('user-post.approve');
+    Route::delete('/user-posts/{id}/delete','UserPostController@destroy')->name('user-post.destroy');
 });
 
 Route::namespace('Member')->prefix('/member')->middleware('auth', 'member')->name('member.')->group(function () {
