@@ -41,7 +41,7 @@ Route::namespace('Guest')->group(function () {
     });
 
     Route::name('gallery.')->prefix('/thu-vien-anh')->group(function () {
-        Route::get('/', 'GalleryController@index')->name('index');
+        Route::get('/', 'GalleryController@index')->name('index'); // name = gallery.index
         Route::get('/{slug}/show', 'GalleryController@show')->name('show');
     });
 
@@ -72,6 +72,9 @@ Route::namespace('Admin')->prefix('/admin')->middleware('auth', 'admin')->name('
     Route::get('/user-posts/','UserPostController@index')->name('user-post.index');
     Route::put('/user-posts/{id}/approve','UserPostController@approve')->name('user-post.approve');
     Route::delete('/user-posts/{id}/delete','UserPostController@destroy')->name('user-post.destroy');
+    Route::get('/documents','DocumentController@index')->name('document.index');
+    Route::post('/documents','DocumentController@store')->name('document.store');
+    Route::delete('/documents/{slug}/destroy','DocumentController@destroy')->name('document.destroy');
 });
 
 Route::namespace('Member')->prefix('/member')->middleware('auth', 'member')->name('member.')->group(function () {

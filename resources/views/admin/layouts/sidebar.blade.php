@@ -119,6 +119,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('admin.document.index')}}" class="nav-link {{ App\Helpers\RouteHelper::isActiveRoute('document') }}">
+                        <i class="fas fa-paperclip"></i>
+                        <p>
+                            Văn bản hành chính
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('logout') }}"
                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                        class="nav-link">

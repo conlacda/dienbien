@@ -6,6 +6,7 @@ use App\Activity;
 use App\Children2;
 use App\Children3;
 use App\ContactInformation;
+use App\Document;
 use App\Gallery;
 use App\Http\Controllers\Controller;
 use App\NewsPost;
@@ -30,6 +31,7 @@ class HomeController extends Controller
             return count($item->images) > 0;
         })->values();
         $videos = Video::take(4)->get();
-        return view('index',compact('children2New','children3New','contact','news','galleries','videos'));
+        $documents  = Document::take(5)->get();
+        return view('index',compact('children2New','children3New','contact','news','galleries','videos','documents'));
     }
 }

@@ -239,8 +239,10 @@
                                         <div style="clear:both"></div>
                                         <div class="xhitem">
                                             <ul>
-                                                <li><a href="{{route('raise-fund-news.index',['type' => 'member'])}}">Tin tức về trẻ em</a></li>
-                                                <li><a href="{{route('raise-fund-news.index',['type' => 'admin'])}}">Bài đăng gây quỹ từ người dùng</a></li>
+                                                <li><a href="{{route('raise-fund-news.index',['type' => 'member'])}}">Tin
+                                                        tức về trẻ em</a></li>
+                                                <li><a href="{{route('raise-fund-news.index',['type' => 'admin'])}}">Bài
+                                                        đăng gây quỹ từ người dùng</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -495,28 +497,34 @@
                                         <div class="xnews">
                                             <div class="xleft">
                                                 <div style="padding:10px;">
-{{--                                                    Nội dung tin tức - sự kiện cột trái , dưới là cột phải--}}
+                                                    {{--                                                    Nội dung tin tức - sự kiện cột trái , dưới là cột phải--}}
                                                     @if (count($news)>=1 )
                                                         <div class="imgnews">
-                                                            <a href="#" data-toggle="modal" data-target="#post-{{$news[0]->id}}">
+                                                            <a href="#" data-toggle="modal"
+                                                               data-target="#post-{{$news[0]->id}}">
                                                                 <img alt="{{$news[0]->title}}"
                                                                      src="{{$news[0]->cover_img}}"/>
                                                             </a>
                                                         </div>
                                                         <h2 class="xtitle">
-                                                            <a href="#" title=""  data-toggle="modal" data-target="#post-{{$news[0]->id}}">
+                                                            <a href="#" title="" data-toggle="modal"
+                                                               data-target="#post-{{$news[0]->id}}">
                                                                 <div class="title-hidden">
                                                                     {!! $news[0]->title !!}
                                                                 </div>
                                                             </a>
                                                         </h2>
-{{--                                                    -----------------}}
-                                                        <div class="modal fade" id="post-{{$news[0]->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        {{--                                                    -----------------}}
+                                                        <div class="modal fade" id="post-{{$news[0]->id}}" tabindex="-1"
+                                                             role="dialog" aria-labelledby="exampleModalLabel"
+                                                             aria-hidden="true">
                                                             <div class="modal-dialog modal-lg" role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalLabel">Nội dung bài viết</h5>
-                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                                            Nội dung bài viết</h5>
+                                                                        <button type="button" class="close"
+                                                                                data-dismiss="modal" aria-label="Close">
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
@@ -526,12 +534,14 @@
                                                                         {!! $news[0]->content !!}
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Xong</button>
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                                data-dismiss="modal">Xong
+                                                                        </button>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-{{--                                                    ----}}
+                                                        {{--                                                    ----}}
                                                         <div class="summary-hidden xdes">
                                                             {!! $news[0]->content !!}
                                                         </div>
@@ -544,18 +554,23 @@
                                                     @foreach($news as $post)
                                                         <div class="xitem">
                                                             <h2 class="xlink">
-                                                                <a href="#" title="#" data-toggle="modal" data-target="#post1-{{$post->id}}">
+                                                                <a href="#" title="#" data-toggle="modal"
+                                                                   data-target="#post1-{{$post->id}}">
                                                                     {{$post->title}}
                                                                 </a>
                                                             </h2>
                                                         </div>
-{{--                                                        Modal -----------}}
-                                                        <div class="modal fade" id="post1-{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        {{--                                                        Modal -----------}}
+                                                        <div class="modal fade" id="post1-{{$post->id}}" tabindex="-1"
+                                                             role="dialog" aria-labelledby="exampleModalLabel"
+                                                             aria-hidden="true">
                                                             <div class="modal-dialog modal-lg" role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalLabel">Nội dung bài viết</h5>
-                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                                            Nội dung bài viết</h5>
+                                                                        <button type="button" class="close"
+                                                                                data-dismiss="modal" aria-label="Close">
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
@@ -565,12 +580,14 @@
                                                                         {!! $post->content !!}
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Xong</button>
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                                data-dismiss="modal">Xong
+                                                                        </button>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-{{--                                                        --}}
+                                                        {{--                                                        --}}
                                                     @endforeach
                                                 @endif
 
@@ -593,11 +610,13 @@
                             <div id="dnn_ctr562_ContentPane">
                                 <!-- Start_Module_562 -->
                                 <div id="dnn_ctr562_ModuleContent" class="DNNModuleContent ModTNHtmlC">
-                                 <p style="background-color: yellow">Mọi cá nhân, tổ chức quan tâm đến quỹ xin vui lòng liên hệ fanpage
-                                     <a href="https://www.facebook.com/Qu%E1%BB%B9-B%E1%BA%A3o-tr%E1%BB%A3-tr%E1%BA%BB-em-t%E1%BB%89nh-%C4%90i%E1%BB%87n-Bi%C3%AAn-456115844746109/">tại đây</a>
-                                      <br>Hotline: 0982356433
-                                     <br> Chúng tôi xin chân thành cảm ơn
-                                 </p>
+                                    <p style="background-color: yellow">Mọi cá nhân, tổ chức quan tâm đến quỹ xin vui
+                                        lòng liên hệ fanpage
+                                        <a href="https://www.facebook.com/Qu%E1%BB%B9-B%E1%BA%A3o-tr%E1%BB%A3-tr%E1%BA%BB-em-t%E1%BB%89nh-%C4%90i%E1%BB%87n-Bi%C3%AAn-456115844746109/">tại
+                                            đây</a>
+                                        <br>Hotline: 0982356433
+                                        <br> Chúng tôi xin chân thành cảm ơn
+                                    </p>
 
                                     <span id="dnn_ctr562_Main_lblMessage" style="clear: both;"></span>
 
@@ -1060,57 +1079,27 @@
                                                 <table cellpadding="4" style="margin: auto;border-collapse:collapse"
                                                        class="xtable">
                                                     <tbody>
-
-                                                    <tr>
-                                                        <td>
-                                                            <div class="xtitle">
-                                                                <a href=/images/0/TAILIEU/thanglb/2018_7/hdsd_treem_diaphuong_update.docx'
-                                                                   title='Hướng dẫn sử dụng phần mềm CSDL Quỹ BTTEVN'
-                                                                   target="_blank" class="xlinktitle">
-                                                                    Hướng dẫn sử dụng phần mềm CSDL Quỹ BTTEVN
-                                                                </a>
-                                                            </div>
-                                                        </td>
-                                                        <td style="width:20%">
-                                                            <a href='/DesktopModules/TNNewsSolution/UserNewsList_TaiLieu_Download.ashx?url/images/0/TAILIEU/thanglb/2018_7/hdsd_treem_diaphuong_update.docx'
-                                                               target="_blank" class="Download" style=""></a>
-                                                            <div class="ScrollarrowDownload"
-                                                                 onclick='popupChoosefile(1806);' title="Tải về"></div>
-                                                            <div class="Choosefile choosefile1806 ">
-                                                                <div class="choosefilewarp">
-                                                                    <div class="scrollbar">
-
-                                                                    </div>
+                                                    @if(count($documents) == 0)
+                                                        <tr>
+                                                            <td>
+                                                                <div class="xtitle">
+                                                                    <a href="#" class="xlinktitle">Chưa có văn bản nào</a>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>
-                                                            <div class="xtitle">
-                                                                <a href=/images/0/TAILIEU/thanglb/2016_7/tai_lieu_tap_huan_tc_ke_toan_nam_2016.docx'
-                                                                   title='tai lieu tai chinh ke toan' target="_blank"
-                                                                   class="xlinktitle">
-                                                                    tai lieu tai chinh ke toan
-                                                                </a>
-                                                            </div>
-                                                        </td>
-                                                        <td style="width:20%">
-                                                            <a href='/DesktopModules/TNNewsSolution/UserNewsList_TaiLieu_Download.ashx?url/images/0/TAILIEU/thanglb/2016_7/tai_lieu_tap_huan_tc_ke_toan_nam_2016.docx'
-                                                               target="_blank" class="Download" style=""></a>
-                                                            <div class="ScrollarrowDownload"
-                                                                 onclick='popupChoosefile(1348);' title="Tải về"></div>
-                                                            <div class="Choosefile choosefile1348 ">
-                                                                <div class="choosefilewarp">
-                                                                    <div class="scrollbar">
-
-                                                                    </div>
+                                                            </td>
+                                                        </tr>
+                                                    @endif
+                                                    @foreach($documents as $document)
+                                                        <tr>
+                                                            <td>
+                                                                <div class="xtitle">
+                                                                    <a href='{{$document->link}}' download
+                                                                       title='{{$document->title}}' class="xlinktitle">
+                                                                        {{$document->title}}
+                                                                    </a>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
                                                     </tbody>
                                                 </table>
                                                 <table cellspacing="0" style="margin: auto; border-collapse: collapse; width: 100%;

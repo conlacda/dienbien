@@ -44,16 +44,16 @@
                             <th style="width: 1%">
                                 #
                             </th>
-                            <th style="width: 20%">
+                            <th style="width: 18%">
                                 Tiêu đề
                             </th>
                             <th style="width: 33%">
                                 Nội dung
                             </th>
-                            <th style="width: 8%">
+                            <th style="width: 12%">
                                 Người đăng bài
                             </th>
-                            <th style="width: 38%" class="text-center">
+                            <th style="width: 36%" class="text-center">
                                 Thao tác
                             </th>
                         </tr>

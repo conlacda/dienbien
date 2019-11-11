@@ -37,66 +37,102 @@
                                 <div style="clear:both;"></div>
                                 <div class="content">
                                     <i class="fas fa-home" style="color:white;"></i>
-                                    <a style="color: white">{{$gallery->title}}</a>
+                                    <a style="color: white" href="{{route('gallery.index')}}">Thư viện ảnh</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="DnnModule DnnModule-TNNewsSolution DnnModule-540"><a name="540"></a>
-                        <div id="dnn_ctr540_ContentPane"><!-- Start_Module_540 -->
-                            <div id="dnn_ctr540_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">
+                    <div class="DnnModule DnnModule-TNNewsSolution DnnModule-541"><a name="541"></a>
+                        <div id="dnn_ctr541_ContentPane"><!-- Start_Module_541 -->
+                            <div id="dnn_ctr541_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">
 
-
-                                <div class="tncnidemo_wrap mid540">
-                                    <div class="contentx">
-                                        <div id="dnn_ctr540_Main_UserNewsImages_up">
-
-
-                                            @if (count($gallery->images) == 0)
-                                                <p>Album ảnh này hiện chưa có ảnh nào !</p>
-                                            @else
-                                                @foreach($gallery->images as $index => $image)
-                                                    <div class="xitem">
-                                                        <div class="xboxitem">
-                                                            <a href="#">
-                                                                <div class="ximgdiv"><img class="ximg"
-                                                                                          alt="Ảnh {{$index}}"
-                                                                                          src="{{$image->link }}">
-                                                                </div>
-                                                                <div class="xtitlez">
-                                                                    <span>Chùm ảnh về trẻ em dân tộc thiểu số </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                @endforeach
-                                            @endif
-                                            <div style="clear:both; height:10px;"></div>
-                                            <div class="PagingContainer">
-
+                                <div class="tnnddemo_wrap">
+                                    <div class="newdetailscontent">
+                                        <div class="xtext">
+                                            <span><h1>{{$gallery->title}}</h1>
+                                                <p>{{$gallery->introduction}}</p>
+                                            </span>
+                                            <div style="margin: 5px 0;">
+                                                <span id="dnn_ctr541_Main_UserNewsImageDetail_Label2" class="xdate">Cập nhật vào: {{$gallery->created_at}}</span>
                                             </div>
 
                                         </div>
+                                        <p class="xsubject"></p>
+                                        <div class="tinlqduocchon">
+                                            <ul>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div style="clear:both"></div>
+
+                                    <div class="xcontents">
+                                        @if (count($gallery->images) == 0)
+                                            <p>Album ảnh này hiện chưa có ảnh nào !</p>
+                                        @else
+                                            @foreach($gallery->images as $index => $image)
+                                                <a class="xitem xphoto" rel="group1"
+                                                   href="/Portals/0/NEWS_IMAGES/minhhanh/2016_4/img_5110.jpg" title="">
+                                                    <img style="width:100%;" class="ximg"
+                                                         src="{{$image->link}}" alt="">
+                                                    <span class="clgt"></span>
+                                                </a>
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                    <div style="clear:both;height:10px;"></div>
+                                    <input type="hidden" name="dnn$ctr541$Main$UserNewsImageDetail$zz"
+                                           id="dnn_ctr541_Main_UserNewsImageDetail_zz" value="g:plusone:size='medium'">
+
                                 </div>
-                                <div style="clear:both"></div>
+                                <div style="clear: both;">
+                                </div>
 
 
-                                <div style="clear:both"></div>
+                                <div style="clear: both;"></div>
 
                                 <script type="text/javascript">
                                     jQuery(document).ready(function () {
-                                        var scop = jQuery(".mid" + '540');
-                                        scop.find("img").error(function () {
-                                            jQuery(this).attr("src", "/images/tnlogo.png");
+                                        $("a.xitem").fancybox({
+                                            'transitionIn': 'none',
+                                            'transitionOut': 'none',
+                                            'titlePosition': 'over',
+                                            'titleFormat': function (title, currentArray, currentIndex, currentOpts) {
+                                                return '<span id="fancybox-title-over">' + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                                            }
                                         });
+                                        jQuery(function () {
+                                            jQuery(window).scroll(function () {
+                                                if (jQuery(this).scrollTop() > 100) {
+                                                    jQuery('#gototop').fadeIn();
+                                                } else {
+                                                    jQuery('#gototop').fadeOut();
+                                                }
+                                            });
+
+                                            // scroll body to 0px on click
+                                            jQuery('#gototop').click(function () {
+                                                jQuery('body,html').animate({
+                                                    scrollTop: 0
+                                                }, 800);
+                                                return false;
+                                            });
+                                        });
+
                                     });
                                 </script>
 
 
-                            </div><!-- End_Module_540 --></div>
+                                <script type="text/javascript">
+
+                                    function ReplaceUrlWithoutReloading(urlserver, urlclient) {
+                                        //window.history.pushState({ id: 35 }, 'Viewing item #35', '/item/35');
+                                        //window.history.pushState({ id: 1 }, urlclient, urlserver);
+                                        window.history.replaceState({id: 1}, urlclient, urlserver);
+                                    }
+                                </script>
+
+
+                            </div><!-- End_Module_541 --></div>
                         <div style="clear:both;"></div>
                     </div>
 
