@@ -9,8 +9,10 @@
             height: 30px;
         }
 
-        .video-play {
-
+        .document-list {
+            background-color: #d4d4d4;
+            padding: 4px;
+            text-decoration: underline dotted orange;
         }
     </style>
 @endpush
@@ -612,7 +614,8 @@
                                 <div id="dnn_ctr562_ModuleContent" class="DNNModuleContent ModTNHtmlC">
                                     <p style="background-color: yellow">Mọi cá nhân, tổ chức quan tâm đến quỹ xin vui
                                         lòng liên hệ fanpage
-                                        <a href="https://www.facebook.com/Qu%E1%BB%B9-B%E1%BA%A3o-tr%E1%BB%A3-tr%E1%BA%BB-em-t%E1%BB%89nh-%C4%90i%E1%BB%87n-Bi%C3%AAn-456115844746109/">tại
+                                        <a href="https://www.facebook.com/Qu%E1%BB%B9-B%E1%BA%A3o-tr%E1%BB%A3-tr%E1%BA%BB-em-t%E1%BB%89nh-%C4%90i%E1%BB%87n-Bi%C3%AAn-456115844746109/"
+                                           target="_blank">tại
                                             đây</a>
                                         <br>Hotline: 0982356433
                                         <br> Chúng tôi xin chân thành cảm ơn
@@ -1073,98 +1076,15 @@
 
                                             </div>
                                         </div>
-                                        <div class="xcontent">
-                                            <div id="dnn_ctr752_Main_UserTaiLieuList_UpdatePanel2">
-
-                                                <table cellpadding="4" style="margin: auto;border-collapse:collapse"
-                                                       class="xtable">
-                                                    <tbody>
-                                                    @if(count($documents) == 0)
-                                                        <tr>
-                                                            <td>
-                                                                <div class="xtitle">
-                                                                    <a href="#" class="xlinktitle">Chưa có văn bản nào</a>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    @endif
-                                                    @foreach($documents as $document)
-                                                        <tr>
-                                                            <td>
-                                                                <div class="xtitle">
-                                                                    <a href='{{$document->link}}' download
-                                                                       title='{{$document->title}}' class="xlinktitle">
-                                                                        {{$document->title}}
-                                                                    </a>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                    </tbody>
-                                                </table>
-                                                <table cellspacing="0" style="margin: auto; border-collapse: collapse; width: 100%;
-                    display: none; border-bottom: 1px solid #dddddd; border-right: 1px solid #dddddd;
-                    border-left: 1px solid #dddddd">
-                                                    <tr>
-                                                        <td style="vertical-align: top; padding-top: 2px; padding-bottom: 2px;">
-
-                                                            <div class="spanexcel" style="display: none;">
-                                                                <input type="submit"
-                                                                       name="dnn$ctr752$Main$UserTaiLieuList$Button3"
-                                                                       value="Xuất excel"
-                                                                       id="dnn_ctr752_Main_UserTaiLieuList_Button3"
-                                                                       class="da-button blue"
-                                                                       style="float: left; min-width: 110px; padding-right: 30px;"/>
-                                                                <img src="/images/navigate/none.png"
-                                                                     class="cssiconxuatexcel"/>
-                                                                <div style="clear: both;">
-                                                                </div>
-                                                                <div class="J-M fixwit">
-                                                                    <div class="SK">
-                                                                        <div class="J-N ">
-                                                                            <a id="dnn_ctr752_Main_UserTaiLieuList_LinkButton3"
-                                                                               href="javascript:__doPostBack(&#39;dnn$ctr752$Main$UserTaiLieuList$LinkButton3&#39;,&#39;&#39;)">
-                                                    <span>
-                                                        <span
-                                                            id="dnn_ctr752_Main_UserTaiLieuList_Label11">Xuất toàn bộ</span>
-                                                    </span>
-                                                                            </a>
-                                                                        </div>
-                                                                        <div class="J-N ">
-                                                                            <a id="dnn_ctr752_Main_UserTaiLieuList_LinkButton4"
-                                                                               href="javascript:__doPostBack(&#39;dnn$ctr752$Main$UserTaiLieuList$LinkButton4&#39;,&#39;&#39;)">
-                                                    <span>
-                                                        <span id="dnn_ctr752_Main_UserTaiLieuList_Label12">Xuất bản ghi được chọn</span></span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="J-Kh" style="display: none">
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="PagingContainer">
-                                                                <ul>
-                                                                    <li class="pagedes"></li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                        <td style="padding-bottom: 5px;">
-                                                            <div class="PagingContainer"><span
-                                                                    style="color:red;font-size:11px;">Không tìm thấy bản ghi nào</span>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                                <div style="float: left; clear: both;">
-
-
-                                                </div>
-
-                                            </div>
-                                            <div style="clear: both;"></div>
-                                            <input type="hidden" name="dnn$ctr752$Main$UserTaiLieuList$_CurrentPage"
-                                                   id="dnn_ctr752_Main_UserTaiLieuList__CurrentPage" value="0"/>
+                                        {{--                                        xxxxxxxxxxxxxxxxxxxxxxxxx--}}
+                                        <div class="document-list">
+                                            <ul>
+                                                @foreach($documents as $document)
+                                                    <li><i class="fas fa-stream"></i><a href="{{$document->link}}"
+                                                                                        download>{{$document->title}}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
                                         </div>
                                         <div style="clear: both;"></div>
                                         <input type="hidden" name="dnn$ctr752$Main$UserTaiLieuList$hdid"
@@ -1247,161 +1167,58 @@
                             </div>
                             <div style="clear:both;"></div>
                         </div>
-                        <div class="DnnModule DnnModule-TNNewsSolution DnnModule-517"><a name="517"></a>
-                            <div id="dnn_ctr517_ContentPane">
-                                <!-- Start_Module_517 -->
-                                <div id="dnn_ctr517_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">
-
-
-                                    <div mid="517" class="tnalbum_gwrap">
+                        {{-- Nhà tài trợ--}}
+                        <div class="DnnModule DnnModule-TNHtml DnnModule-837"><a name="837"></a>
+                            <div id="dnn_ctr837_ContentPane"><!-- Start_Module_837 -->
+                                <div id="dnn_ctr837_ModuleContent" class="DNNModuleContent ModTNHtmlC">
+                                    <div class="tnalbum_gwrap">
                                         <div class="xcate">
                                             <div class="xparent">
                                                 <div class="xlink">
-                                                    <a href="/thu-vien-anh_t117c19"><span
-                                                            id="dnn_ctr517_Main_UserNewsBoxImages__MainCategoryName">Nhà tài trợ</span></a>
+                                                    <a tabindex="0"><span>Nhà Tài trợ</span></a>
                                                 </div>
-                                            </div>
-                                            <div id="dnn_ctr517_Main_UserNewsBoxImages__DanhMucCon">
-
-                                                <div class="childtab childtab517" style="display:none;">
-                                                    <ul>
-
-                                                    </ul>
-                                                </div>
-
                                             </div>
                                         </div>
-                                        <div id="buttons">
-                                            <a href="#" id="prev">prev</a>
-                                            <div class="xcontent">
-                                                <div id="carousel">
-                                                    <div id="slides">
-                                                        <ul>
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a tabindex="0"
-                                                                       href="http://www.aia.com.vn/vi/index.html"
-                                                                       target="_blank"><img src="/images/0/ADV/AIA.png"
-                                                                                            style=""
-                                                                                            kasperskylab_antibanner="on"></a>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a tabindex="0" href="http://www.baoviet.com.vn/"
-                                                                       target="_blank"><img
-                                                                            src="/images/0/ADV/Logo%20BV%20Life-fileView.png"
-                                                                            kasperskylab_antibanner="on"></a>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a href="http://www.fpt.vn/" tabindex="0"
-                                                                       target="_blank"><img
-                                                                            src="/images/0/ADV/fpt.png"
-                                                                            kasperskylab_antibanner="on"></a>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a href="http://www.phumyhung.com.vn" tabindex="0"
-                                                                       target="_blank"><img
-                                                                            src="/images/0/ADV/phumyhung.png"
-                                                                            kasperskylab_antibanner="on"></a>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="imgnews">
-                                                                    <a href="http://www.vietinbank.vn" tabindex="0"
-                                                                       target="_blank"><img
-                                                                            src="/images/0/ADV/viettin.png"
-                                                                            kasperskylab_antibanner="on"></a>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="imgnews"><a
-                                                                        href="http://www.vuoncaovietnam.com/"
-                                                                        tabindex="0"
-                                                                        target="_blank"><img
-                                                                            src="/images/0/ADV/vuoncao.png"
-                                                                            kasperskylab_antibanner="on"></a>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="imgnews"><a href="http://www.msbs.com.vn"
-                                                                                        tabindex="0"
-                                                                                        target="_blank"><img
-                                                                            src="/images/0/ADV/mari.png"
-                                                                            kasperskylab_antibanner="on"></a></div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="imgnews"><a
-                                                                        href="http://www.vietcombank.com.vn"
-                                                                        tabindex="0"
-                                                                        target="_blank"><img
-                                                                            src="/images/0/ADV/vietcom.png"
-                                                                            kasperskylab_antibanner="on"></a></div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="imgnews"><a
-                                                                        href="https://www.vinamilk.com.vn/"
-                                                                        tabindex="0"
-                                                                        target="_blank"><img
-                                                                            src="/images/0/ADV/VINAMILK.png"
-                                                                            kasperskylab_antibanner="on"></a></div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="imgnews"><a href="http://www.bidv.com.vn"
-                                                                                        tabindex="0"
-                                                                                        target="_blank"><img
-                                                                            src="/images/0/ADV/bidv.png"
-                                                                            kasperskylab_antibanner="on"></a></div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="imgnews"><a
-                                                                        href="http://www.ugetherclothes.com/"
-                                                                        tabindex="0"
-                                                                        target="_blank"><img
-                                                                            src="/images/0/ADV/us-logo.jpg"
-                                                                            kasperskylab_antibanner="on"></a>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="imgnews"><a href="https://www.pnj.com.vn/"
-                                                                                        tabindex="0"
-                                                                                        target="_blank"><img
-                                                                            src="/images/0/ADV/PNJ1.jpg"
-                                                                            kasperskylab_antibanner="on"></a></div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="imgnews"><a
-                                                                        href="https://www.generali-life.com.vn/"
-                                                                        tabindex="0"
-                                                                        target="_blank"><img
-                                                                            src="/images/0/ADV/logogen.png"
-                                                                            kasperskylab_antibanner="on"></a>
-                                                                </div>
-                                                            </li>
-                                                            <br>
-                                                        </ul>
-                                                    </div>
-                                                </div>
+
+                                        <div style="clear:both"></div>
+                                        <div id="amazon_scroller3" class="amazon_scroller"
+                                             style="border: 0px solid black; padding: 0px; width: 960px; height: 102px; position: relative;">
+                                            <div class="amazon_scroller_mask" style="width: 900px; height: 102px;">
+                                                <ul style="width: 1950px; position: absolute; left: 0px;"
+                                                    id="sponsor-list">
+                                                    @foreach($sponsors->chunk(6) as $index => $chunk)
+                                                        @foreach($chunk as $sponsor)
+                                                            <li style="width: 140px; display: block;"
+                                                                class="sponsor-{{$index}}">
+                                                                <a href="{{$sponsor->link == '' ? '#' : $sponsor->link}}"
+                                                                   tabindex="0"
+                                                                   target="_blank" title="{{$sponsor->name}}"
+                                                                   style="color: rgb(12, 103, 151); font-size: 0px;"><img
+                                                                        src="{{$sponsor->cover_img}}"
+                                                                        kasperskylab_antibanner="on"
+                                                                        style="width: 140px; height: 100px;">
+                                                                    <div class="amazon_scroller_title"
+                                                                         style="height: 0px;">
+                                                                        undefined
+                                                                    </div>
+                                                                </a></li>
+                                                        @endforeach
+                                                    @endforeach
+                                                    <br>
+                                                </ul>
                                             </div>
-                                            <a href="#" id="next">next</a>
+
                                             <div style="clear: both;"></div>
                                         </div>
+                                        <div style="clear: both;"></div>
                                     </div>
 
-                                    <div style="clear: both;"></div>
+                                    <span id="dnn_ctr837_Main_lblMessage" style="clear: both;"></span>
 
-
-                                    <div style="clear: both;">
-                                    </div>
-                                </div>
-                                <!-- End_Module_517 -->
-                            </div>
+                                </div><!-- End_Module_837 --></div>
                             <div style="clear:both;"></div>
                         </div>
+                        {{-- ! Nhà tài trợ--}}
                         <div class="DnnModule DnnModule-TNHtml DnnModule-875"><a name="875"></a>
                             <div id="dnn_ctr875_ContentPane">
                                 <!-- Start_Module_875 -->
@@ -1426,3 +1243,21 @@
     </form>
 
 @endsection
+@push('js')
+    <script>
+        $(document).ready(function () {
+            // setInterval(function(){ alert("Hello"); }, 3000);
+            var sponsor_number = {{count($sponsors)}};
+            var slide_number = Math.trunc(sponsor_number / 6);
+            console.log(slide_number);
+            let index = 0;
+            setInterval(function () {
+                $(".sponsor-" + index).hide();
+                index +=1;
+                if (index > slide_number) index=0;
+                $(".sponsor-" + index).show();
+                console.log(index);
+            }, 3000);
+        });
+    </script>
+@endpush

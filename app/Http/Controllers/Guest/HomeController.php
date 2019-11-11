@@ -10,6 +10,7 @@ use App\Document;
 use App\Gallery;
 use App\Http\Controllers\Controller;
 use App\NewsPost;
+use App\Sponsor;
 use App\Video;
 
 // Controller ở trang chủ ngoài cùng
@@ -32,6 +33,7 @@ class HomeController extends Controller
         })->values();
         $videos = Video::take(4)->get();
         $documents  = Document::take(5)->get();
-        return view('index',compact('children2New','children3New','contact','news','galleries','videos','documents'));
+        $sponsors = Sponsor::all();
+        return view('index',compact('children2New','children3New','contact','news','galleries','videos','documents','sponsors'));
     }
 }
