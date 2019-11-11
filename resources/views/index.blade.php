@@ -9,11 +9,6 @@
             height: 30px;
         }
 
-        .document-list {
-            background-color: #d4d4d4;
-            padding: 4px;
-            text-decoration: underline dotted orange;
-        }
 
         li {
             transition: visibility 0.5s, opacity 0.5s linear;
@@ -375,14 +370,14 @@
                                     </style>
 
                                     <div class="xtaitro">
-                                        <div class="xleft"
+                                        <div class="xleft" style="background: #0073b9"
                                              onclick="showDialog('myoverlayAdminform', 'mypopupAdminform');">
                                         <span id="dnn_ctr848_Main_UserNewsView_TaikhoanTiepnhan_Label111"
                                               style="cursor:pointer">Tài khoản tiếp nhận</span>
                                         </div>
                                         <div class="xright">
                                             <marquee behavior="scroll" direction="left" scrolldelay="200"><span
-                                                    id="dnn_ctr848_Main_UserNewsView_TaikhoanTiepnhan_Label110">Tài khoản tiền Việt:   001.0.00.0000355   *   Tài khoản ngoại tệ:  001.0.37.0002165   *   Tại: Sở giao dịch ngân hàng TMCP Ngoại thương Việt Nam.</span>
+                                                    id="dnn_ctr848_Main_UserNewsView_TaikhoanTiepnhan_Label110">Tài khoản ngân hàng : đang cập nhật</span>
                                             </marquee>
                                         </div>
                                         <div style="clear:both;"></div>
@@ -536,7 +531,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                         <img src="{{$news[0]->cover_img}}">
-                                                                        <p style="color: orange">{{$news[0]->title}}</p>
+                                                                        <p style="color: #2d5adc">{{$news[0]->title}}</p>
                                                                         {!! $news[0]->content !!}
                                                                     </div>
                                                                     <div class="modal-footer">
@@ -582,7 +577,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                         <img src="{{$post->cover_img}}">
-                                                                        <p style="color: orange">{{$post->title}}</p>
+                                                                        <p style="color: #2d5adc">{{$post->title}}</p>
                                                                         {!! $post->content !!}
                                                                     </div>
                                                                     <div class="modal-footer">
@@ -616,13 +611,13 @@
                             <div id="dnn_ctr562_ContentPane">
                                 <!-- Start_Module_562 -->
                                 <div id="dnn_ctr562_ModuleContent" class="DNNModuleContent ModTNHtmlC">
-                                    <p style="background-color: yellow">Mọi cá nhân, tổ chức quan tâm đến quỹ xin vui
+                                    <p style="background-color: #d2d2b2">Mọi cá nhân, tổ chức quan tâm đến quỹ xin vui
                                         lòng liên hệ fanpage
                                         <a href="https://www.facebook.com/Qu%E1%BB%B9-B%E1%BA%A3o-tr%E1%BB%A3-tr%E1%BA%BB-em-t%E1%BB%89nh-%C4%90i%E1%BB%87n-Bi%C3%AAn-456115844746109/"
                                            target="_blank">tại
                                             đây</a>
                                         <br>Hotline: 0982356433
-                                        <br> Chúng tôi xin chân thành cảm ơn
+                                        <br>Chúng tôi xin chân thành cảm ơn.
                                     </p>
 
                                     <span id="dnn_ctr562_Main_lblMessage" style="clear: both;"></span>
@@ -751,7 +746,7 @@
                         {{--                        </div>--}}
 
                         <div>
-                            <div class='my-title'>
+                            <div class='my-title' style="background: #0073b9">
                                 <a href="{{route('video.index')}}" style="color: white">
                                     VIDEO
                                 </a>
@@ -775,7 +770,7 @@
 
 
                                     <div mid="524" class="tnnewscate1_nochild">
-                                        <div class="xcate">
+                                        <div class="xcate" style="background: #0073b9">
                                             <div class="xparent">
                                                 <div class="xlink">
                                                     <a href="{{route('activity.index')}}"><span>Chương trình đã thực hiện</span></a>

@@ -1,7 +1,5 @@
 @extends('admin.app')
 @push('css')
-
-
 @endpush
 @section('content')
     <div class="content-wrapper">
@@ -72,7 +70,7 @@
 @push('js')
     @if(session()->has('message'))
         <script>
-            alertify.alert("{{ session()->get('message') }}");
+            alertify.success("{{ session()->get('message') }}");
         </script>
     @endif
 @endpush

@@ -121,7 +121,7 @@
                         <div id="dnn_ctr513_ModuleContent" class="DNNModuleContent ModTNHtmlC">
                             <a href="/"><img style="margin: 10px 0px;" alt="" src="/images/0/HTML/logo_fb.png"
                                              height="58" width="58"></a>
-
+                            <span style="font-style: italic;">Quỹ bảo trợ trẻ em Điện Biên</span>
                             <span id="dnn_ctr513_Main_lblMessage" style="clear: both;"></span>
 
                         </div>

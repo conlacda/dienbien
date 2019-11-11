@@ -80,7 +80,7 @@ class IntroductionController extends Controller
         if ($introduction == NULL) abort(404);
         $introduction->content = $request['content'];
         $introduction->save();
-        return redirect()->back()->with('message', 'Cập nhật thành công');
+        return redirect()->route('admin.introductions.index')->with('message', 'Cập nhật thành công');
     }
 
     /**
