@@ -55,15 +55,15 @@
                                     <div class="contentx">
                                         @foreach($activities as $activity)
                                             <div class="xitem">
-                                                <a href="{{route('activity.slug',['slug' => $activity->slug])}}"
-                                                   style="display:block;">
+                                                <a href="#" data-toggle="modal"
+                                                   data-target="#activity-{{$activity->id}}" style="display:block;">
                                                     <img class="ximg"
                                                          alt="{{$activity->title}}"
                                                          src="{{$activity->cover_img}}">
                                                 </a>
                                                 <h2>
-                                                    <a href="{{route('activity.slug',['slug' => $activity->slug])}}"
-                                                       class="xlink">
+                                                    <a href="#" data-toggle="modal"
+                                                       data-target="#activity-{{$activity->id}}" class="xlink">
                                                         {{$activity->title}}
                                                     </a>
                                                 </h2>
@@ -77,7 +77,34 @@
                                             </div>
                                             <p style="font-style: italic;font-size: 12px">Cập nhật vào : {{$activity->updated_at}}</p>
                                             <hr>
-                                            
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="activity-{{$activity->id}}" tabindex="-1"
+                                                 role="dialog" aria-labelledby="exampleModalLabel"
+                                                 aria-hidden="true">
+                                                <div class="modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title"
+                                                                id="exampleModalLabel">{{$activity->title}}</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="offset-md-3 col-md-6">
+                                                                <img src="{{$activity->cover_img}}" style="width: 400px">
+                                                            </div>
+                                                            {!! $activity->content !!}
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Xong
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end Modal -->
                                         @endforeach
 
                                     </div>

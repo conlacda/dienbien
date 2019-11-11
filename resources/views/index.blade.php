@@ -14,6 +14,10 @@
             padding: 4px;
             text-decoration: underline dotted orange;
         }
+
+        li {
+            transition: visibility 0.5s, opacity 0.5s linear;
+        }
     </style>
 @endpush
 @section('content')
@@ -763,9 +767,10 @@
                                 </div>
                             @endif
                         </div>
+                        {{--                        Chương trình đã tổ chức--}}
+
                         <div class="DnnModule DnnModule-TNNewsSolution DnnModule-524"><a name="524"></a>
-                            <div id="dnn_ctr524_ContentPane">
-                                <!-- Start_Module_524 -->
+                            <div id="dnn_ctr524_ContentPane"><!-- Start_Module_524 -->
                                 <div id="dnn_ctr524_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">
 
 
@@ -773,180 +778,73 @@
                                         <div class="xcate">
                                             <div class="xparent">
                                                 <div class="xlink">
-                                                    <a href="/thong-tin-tre-em_t113c72"><span
-                                                            id="dnn_ctr524_Main_UserNewsBoxCategory_vs3_NoChild1__MainCategoryName">Thông tin trẻ em</span></a>
+                                                    <a href="{{route('activity.index')}}"><span>Chương trình đã thực hiện</span></a>
                                                 </div>
                                             </div>
                                             <div id="dnn_ctr524_Main_UserNewsBoxCategory_vs3_NoChild1__DanhMucCon">
 
-                                                <div class="childtab childtab524" style="display:none;">
-                                                    <ul>
-
-                                                        <li>
-                                                            <a href="/tre-em-da-duoc-giup-do_t113c73">
-                                                                <h2 class="iconheadnews">
-                                                                <span
-                                                                    class="xtitlehead"><span>Trẻ em đã được giúp đỡ</span></span>
-                                                                </h2>
-                                                            </a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a href="/tre-em-can-giup-do_t113c74">
-                                                                <h2 class="iconheadnews">
-                                                                    <span
-                                                                        class="xtitlehead"><span>Trẻ em cần giúp đỡ</span></span>
-                                                                </h2>
-                                                            </a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a href="/cac-hoat-dong-ve-tre-em_t113c75">
-                                                                <h2 class="iconheadnews">
-                                                                <span
-                                                                    class="xtitlehead"><span>Các hoạt động về trẻ em</span></span>
-                                                                </h2>
-                                                            </a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a href="/guong-sang-tre-em_t113c76">
-                                                                <h2 class="iconheadnews">
-                                                                    <span
-                                                                        class="xtitlehead"><span>Gương sáng trẻ em</span></span>
-                                                                </h2>
-                                                            </a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a href="/kien-thuc-tre-em_t113c77">
-                                                                <h2 class="iconheadnews">
-                                                                    <span
-                                                                        class="xtitlehead"><span>Kiến thức  trẻ em</span></span>
-                                                                </h2>
-                                                            </a>
-                                                        </li>
-
-                                                    </ul>
-                                                </div>
-
                                             </div>
                                         </div>
                                         <div class="xnews">
-
-                                            <div class="xitem">
-                                                <div class="imgnews">
-                                                    <a href="{{route('children.slug3',['slug' => $children3New->slug])}}">
-                                                        <img src="{{$children3New->cover_img}}"
-                                                             style="width: 80px;height: 44.97px"/>
-                                                    </a>
+                                            @foreach($activities as $activity)
+                                                <div class="xitem">
+                                                    <div class="imgnews">
+                                                        <a href="#" data-toggle="modal"
+                                                           data-target="#activity-{{$activity->id}}"
+                                                           title="{{$activity->title}}">
+                                                            <img
+                                                                alt="{{$activity->title}}"
+                                                                src="{{$activity->cover_img}}">
+                                                        </a>
+                                                    </div>
+                                                    <h2 class="xlink">
+                                                        <a href="#" data-toggle="modal"
+                                                           data-target="#activity-{{$activity->id}}"
+                                                           title="{{$activity->title}}">
+                                                            {{$activity->title}}
+                                                        </a>
+                                                    </h2>
+                                                    <div style="clear: both;"></div>
                                                 </div>
-                                                <h2 class="xlink">
-                                                    <a href="{{route('children.slug3',['slug' => $children3New->slug])}}"
-                                                       title="{{$children3New->title}}">
-                                                        {{$children3New->title}}
-                                                    </a>
-                                                </h2>
-                                                <div style="clear: both;"></div>
-                                            </div>
-                                            <div style="clear: both;"></div>
-
-                                            <div style="clear: both;"></div>
-
-                                            <div class="xitem">
-                                                <div class="imgnews">
-                                                    <a href="{{route('children.slug2',['slug' => $children2New->slug])}}">
-                                                        <img src="{{$children2New->cover_img}}"
-                                                             style="width: 80px;height: 44.97px"/>
-                                                    </a>
-                                                </div>
-                                                <h2 class="xlink">
-                                                    <a href="{{route('children.slug2',['slug' => $children2New->slug])}}"
-                                                       title="{{$children2New->title}}">
-                                                        {{$children2New->title}}
-                                                    </a>
-                                                </h2>
-                                                <div style="clear: both;"></div>
-                                            </div>
-                                            <div style="clear: both;"></div>
-
-                                            <div style="clear: both;"></div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="activity-{{$activity->id}}" tabindex="-1"
+                                                     role="dialog" aria-labelledby="exampleModalLabel"
+                                                     aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title"
+                                                                    id="exampleModalLabel">{{$activity->title}}</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                        aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="offset-md-3 col-md-6">
+                                                                    <img src="{{$activity->cover_img}}" style="width: 400px">
+                                                                </div>
+                                                                {!! $activity->content !!}
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Xong
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end Modal -->
+                                            @endforeach
                                         </div>
                                     </div>
-
                                     <div style="clear: both;"></div>
-
-
                                     <div style="clear: both;"></div>
-
-                                </div>
-                                <!-- End_Module_524 -->
-                            </div>
+                                </div><!-- End_Module_524 --></div>
                             <div style="clear:both;"></div>
                         </div>
-                        <div class="DnnModule DnnModule-TNNewsSolution DnnModule-874"><a name="874"></a>
-                            <div id="dnn_ctr874_ContentPane">
-                                <!-- Start_Module_874 -->
-                                <div id="dnn_ctr874_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">
 
 
-                                    <div mid="874" class="tnnewscate1_nochild">
-                                        <div class="xcate">
-                                            <div class="xparent">
-                                                <div class="xlink">
-                                                    <a href="/nhu-cau-tre-em_t113c101"><span
-                                                            id="dnn_ctr874_Main_UserNewsBoxCategory_vs3_NoChild1__MainCategoryName">Nhu cầu trẻ em</span></a>
-                                                </div>
-                                            </div>
-                                            <div id="dnn_ctr874_Main_UserNewsBoxCategory_vs3_NoChild1__DanhMucCon">
-
-                                                <div class="childtab childtab874" style="display:none;">
-                                                    <ul>
-
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="xnews">
-
-                                            <div class="xitem">
-                                                <div class="imgnews">
-                                                    <a href="/tin-dia-phuong/chuong-trinh-ao-am-mua-dong-cho-tre-em-dan-toc-thieu-so_t114c28n2015"
-                                                       title="CHƯƠNG TRÌNH ÁO ẤM MÙA ĐÔNG CHO TRẺ EM DÂN TỘC THIỂU SỐ">
-                                                        <img
-                                                            alt="CHƯƠNG TRÌNH ÁO ẤM MÙA ĐÔNG CHO TRẺ EM DÂN TỘC THIỂU SỐ"
-                                                            src="/images/0/NEWS_IMAGES/thanglb/2019_6/ao_am.jpg"/>
-                                                    </a>
-                                                </div>
-                                                <h2 class="xlink">
-                                                    <a class="zlinkmain"
-                                                       href="/tin-dia-phuong/chuong-trinh-ao-am-mua-dong-cho-tre-em-dan-toc-thieu-so_t114c28n2015"
-                                                       title="CHƯƠNG TRÌNH ÁO ẤM MÙA ĐÔNG CHO TRẺ EM DÂN TỘC THIỂU SỐ">
-                                                        CHƯƠNG TRÌNH ÁO ẤM MÙA ĐÔNG CHO TRẺ EM DÂN TỘC THIỂU SỐ
-                                                    </a>
-                                                </h2>
-                                                <div style="clear: both;"></div>
-                                            </div>
-                                            <div style="clear: both;"></div>
-
-                                            <div style="clear: both;"></div>
-
-                                            <div style="clear: both;"></div>
-                                        </div>
-                                    </div>
-
-                                    <div style="clear: both;"></div>
-
-
-                                    <div style="clear: both;"></div>
-
-
-                                </div>
-                                <!-- End_Module_874 -->
-                            </div>
-                            <div style="clear:both;"></div>
-                        </div>
+                        {{-- !! Chương trình đã tổ chức End--}}
                         <div class="DnnModule DnnModule-TNNewsSolution DnnModule-752"><a name="752"></a>
                             <div id="dnn_ctr752_ContentPane">
                                 <!-- Start_Module_752 -->
@@ -1253,11 +1151,11 @@
             let index = 0;
             setInterval(function () {
                 $(".sponsor-" + index).hide();
-                index +=1;
-                if (index > slide_number) index=0;
+                index += 1;
+                if (index > slide_number) index = 0;
                 $(".sponsor-" + index).show();
                 console.log(index);
-            }, 3000);
+            }, 5000);
         });
     </script>
 @endpush

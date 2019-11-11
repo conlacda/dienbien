@@ -1,53 +1,34 @@
 <div class="TNHeader">
     <div class="TNHeaderTop">
         <div class="TNContent">
-            <div id="dnn_Link" class="TNHeadLeft">
-                <div class="DnnModule DnnModule-TNHtml DnnModule-515"><a name="515"></a>
-                    <div id="dnn_ctr515_ContentPane">
-                        <!-- Start_Module_515 -->
-                        <div id="dnn_ctr515_ModuleContent" class="DNNModuleContent ModTNHtmlC">
-                            <div style="margin:1px 0">
-                                <a href="http://www.molisa.gov.vn" target="_blank"
-                                   title="Bộ lao động thương binh và xã hội">
-                                    <img src="/images/0/HTML/i_ldxh.png">
-                                </a>
-                            </div>
 
-                            <span id="dnn_ctr515_Main_lblMessage" style="clear: both;"></span>
-
-                        </div>
-                        <!-- End_Module_515 -->
-                    </div>
-                    <div style="clear:both;"></div>
-                </div>
-            </div>
             <div class="TNHeadRight">
-                <div id="dnn_SearchTop" class="TNSearch">
-                    <div class="DnnModule DnnModule-TNNewsSolution DnnModule-514"><a name="514"></a>
-                        <div id="dnn_ctr514_ContentPane">
-                            <!-- Start_Module_514 -->
-                            <div id="dnn_ctr514_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">
+{{--                <div id="dnn_SearchTop" class="TNSearch">--}}
+{{--                    <div class="DnnModule DnnModule-TNNewsSolution DnnModule-514"><a name="514"></a>--}}
+{{--                        <div id="dnn_ctr514_ContentPane">--}}
+{{--                            <!-- Start_Module_514 -->--}}
+{{--                            <div id="dnn_ctr514_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">--}}
 
 
-                                <div class="form-search">
-                                    <label for="tukhoatimkiem" class="placehodercss1"><span
-                                            id="dnn_ctr514_Main_UserNewsSearch_label" for="tukhoatimkiem">Nhập từ khóa tìm kiếm ...</span></label>
-                                    <input name="dnn$ctr514$Main$UserNewsSearch$txtKeyword" type="text"
-                                           id="dnn_ctr514_Main_UserNewsSearch_txtKeyword"
-                                           class="txt-search tukhoatimkiem"
-                                           onkeydown="return __dnn_KeyDown(&#39;13&#39;, &#39;javascript:__doPostBack(%27dnn$ctr514$Main$UserNewsSearch$_SearchButton%27,%27%27)&#39;, event);"
-                                    />
-                                    <a id="dnn_ctr514_Main_UserNewsSearch__SearchButton" class="bt-search"
-                                       href="javascript:__doPostBack(&#39;dnn$ctr514$Main$UserNewsSearch$_SearchButton&#39;,&#39;&#39;)"></a>
-                                </div>
+{{--                                <div class="form-search">--}}
+{{--                                    <label for="tukhoatimkiem" class="placehodercss1"><span--}}
+{{--                                            id="dnn_ctr514_Main_UserNewsSearch_label" for="tukhoatimkiem">Nhập từ khóa tìm kiếm ...</span></label>--}}
+{{--                                    <input name="dnn$ctr514$Main$UserNewsSearch$txtKeyword" type="text"--}}
+{{--                                           id="dnn_ctr514_Main_UserNewsSearch_txtKeyword"--}}
+{{--                                           class="txt-search tukhoatimkiem"--}}
+{{--                                           onkeydown="return __dnn_KeyDown(&#39;13&#39;, &#39;javascript:__doPostBack(%27dnn$ctr514$Main$UserNewsSearch$_SearchButton%27,%27%27)&#39;, event);"--}}
+{{--                                    />--}}
+{{--                                    <a id="dnn_ctr514_Main_UserNewsSearch__SearchButton" class="bt-search"--}}
+{{--                                       href="javascript:__doPostBack(&#39;dnn$ctr514$Main$UserNewsSearch$_SearchButton&#39;,&#39;&#39;)"></a>--}}
+{{--                                </div>--}}
 
 
-                            </div>
-                            <!-- End_Module_514 -->
-                        </div>
-                        <div style="clear:both;"></div>
-                    </div>
-                </div>
+{{--                            </div>--}}
+{{--                            <!-- End_Module_514 -->--}}
+{{--                        </div>--}}
+{{--                        <div style="clear:both;"></div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <div id="dnn_Contact" class="TNContact">
                     <div class="DnnModule DnnModule-TNHtml DnnModule-755"><a name="755"></a>
                         <div id="dnn_ctr755_ContentPane">

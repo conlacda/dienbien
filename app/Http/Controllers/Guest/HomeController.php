@@ -34,6 +34,7 @@ class HomeController extends Controller
         $videos = Video::take(4)->get();
         $documents  = Document::take(5)->get();
         $sponsors = Sponsor::all();
-        return view('index',compact('children2New','children3New','contact','news','galleries','videos','documents','sponsors'));
+        $activities = Activity::take(5)->get();
+        return view('index',compact('children2New','children3New','contact','news','galleries','videos','documents','sponsors','activities'));
     }
 }
