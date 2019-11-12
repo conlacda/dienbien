@@ -31,7 +31,7 @@ class HomeController extends Controller
         $galleries = $galleries->filter(function ($item) {
             return count($item->images) > 0;
         })->values();
-        $videos = Video::take(4)->get();
+        $videos = Video::take(4)->orderBy('id', 'DESC')->get();
         $documents  = Document::take(5)->get();
         $sponsors = Sponsor::all();
         $activities = Activity::take(5)->get();
