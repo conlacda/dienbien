@@ -46,6 +46,12 @@ class VideoController extends Controller
             return redirect()->route('admin.videos.index')->with([
                 'message' => 'Tải lên video thành công',
             ]);
+        } else if (isset($request->link)){
+            $video->fill($request->all());
+            $video->save();
+            return redirect()->route('admin.videos.index')->with([
+                'message' => 'Lưu thành công',
+            ]);
         }
         return redirect()->route('admin.videos.index')->with([
             'message' => 'Có lỗi xảy ra! Thử lại sau .',

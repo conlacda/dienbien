@@ -68,17 +68,25 @@
                                    placeholder="Ghi chú thêm về video nếu có">
                         </div>
                         <div class="form-group">
-                            <label for="video">Video của bạn</label>
-                            <div class="input-group">
+                            <label for="video">Video của bạn
+                                <a href="#" id="video-state-button">Tải lên video</a>
+                                <a href="#" id="link-state-button" style="display: none">Dùng link video</a>
+                            </label>
+                            <div class="input-group" style="display: none" id="video-up">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="video" name="video" required
+                                    <input type="file" class="custom-file-input" id="video" name="video"
                                            accept=".mp4,.webm,.mkv,.flv,.vob,.avi,.mov,.qt,.wmv,.yuv,.rm,.rmvb,.asf,.amv,.m4p,.mpg,.mpeg,.mpv,.mpe,.mpeg,.mpg,.m4v,.svi,.3gp,.3g2,.mxf,.roq,.nsv,.flv,.f4v,.f4p,.f4a,.f4b">
                                     <label class="custom-file-label" for="video">Chọn video của bạn và tải lên</label>
                                 </div>
                             </div>
+                            <div class="input-group" id="link-up">
+                                <div class="custom-file">
+                                    <input type="text" class="form-control" name="link" placeholder="Dán link vào đây ...">
+                                </div>
+                            </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
                     </form>
                 </div>
                 <!-- /.card-body -->
@@ -98,6 +106,19 @@
                 this.value = "";
             };
         };
+        $("#video-state-button").click(function () {
+            $("#video-up").show();
+            $("#link-up").hide();
+            $("#video-state-button").hide();
+            $("#link-state-button").show();
+        });
+        $("#link-state-button").click(function () {
+            $("#video-up").hide();
+            $("#link-up").show();
+            $("#video-state-button").show();
+            $("#link-state-button").hide();
+        });
+
     </script>
     @if(session()->has('message'))
         <script>
