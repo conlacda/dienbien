@@ -121,7 +121,7 @@
                                                             <button type="button" class="btn btn-outline-info"
                                                                     data-dismiss="modal">Đóng
                                                             </button>
-                                                            <button type="button" class="btn btn-danger" id="delete-button" data-id="{{$video->id}}">Xóa video
+                                                            <button type="button" class="btn btn-danger" name="delete-button" data-id="{{$video->id}}">Xóa video
                                                             </button>
                                                         </div>
                                                     </div>
@@ -145,7 +145,7 @@
 @endsection
 @push('js')
     <script>
-        $('#delete-button').click(function () {
+        $('[name=delete-button]').click(function () {
             let videoId = $(this).attr('data-id');
             if (confirm('Bạn có thực sự muốn xóa video này!')){
                 axios.delete("/admin/videos/" + videoId ,{
