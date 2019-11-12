@@ -1,5 +1,11 @@
 @extends('admin.app')
 @push('css')
+    <style>
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
 @endpush
 @section('content')
     <div class="content-wrapper" style="min-height: 1231.06px;">
@@ -40,7 +46,7 @@
                     </div>
                 </div>
                 <div class="card-body p-0" style="display: block;">
-                    <table class="table table-striped projects">
+                    <table class="table table-striped projects" style="table-layout: fixed;word-wrap: break-word;">
                         <thead>
                         <tr>
                             <th style="width: 1%">
@@ -49,13 +55,13 @@
                             <th style="width: 20%">
                                 Tiêu đề
                             </th>
-                            <th style="width: 10%">
+                            <th style="width: 36%">
                                 Nội dung
                             </th>
                             <th style="width: 8%">
                                 Ảnh chủ đề
                             </th>
-                            <th style="width: 38%" class="text-center">
+                            <th style="width: 35%" class="text-center">
                                 Thao tác
                             </th>
                         </tr>

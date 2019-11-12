@@ -47,6 +47,10 @@
         height: 150px;
         overflow: hidden;
     }
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
 </style>
 @stack('css')
 
