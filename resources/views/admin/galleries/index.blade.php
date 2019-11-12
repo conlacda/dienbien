@@ -63,7 +63,7 @@
                                         <img src="{{\App\Image::DEFAULT_ALBUM_IMAGE}}" alt="5" style="width: 100%;height: 300px">
                                     @endif
                                     <div class="container">
-                                        <a href="{{route('admin.galleries.show',['gallery' => $gallery->slug])}}">{{substr($gallery->title,0,20) . '...'}}</a>
+                                        <a href="{{route('admin.galleries.show',['gallery' => $gallery->slug])}}">{{$gallery->title ?? "Xem album ảnh"}}</a>
                                     </div>
                                 </div>
                             </div>
