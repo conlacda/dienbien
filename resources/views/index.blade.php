@@ -437,7 +437,7 @@
                                         <div class="xcate">
                                             <div class="xparent">
                                                 <div class="xlink">
-                                                    <a href="{{route('newspost.index')}}"><span>Tin tức - Sự kiện</span></a>
+                                                    <a href="{{route('newspost.index')}}"><span>Tin tức - Sự kiện1</span></a>
                                                 </div>
                                             </div>
                                             <div id="dnn_ctr535_Main_UserNewsBoxCategory_vs3_NoChild__DanhMucCon">
@@ -505,7 +505,7 @@
                                                             <a href="#" data-toggle="modal"
                                                                data-target="#post-{{$news[0]->id}}">
                                                                 <img alt="{{$news[0]->title}}"
-                                                                     src="{{$news[0]->cover_img}}"/>
+                                                                     src="{{$news[0]->cover_img}}" style="height: 200px;width: 295px"/>
                                                             </a>
                                                         </div>
                                                         <h2 class="xtitle">
