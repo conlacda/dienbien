@@ -14,7 +14,7 @@ class ChangeLinkToLongtextVideosTable extends Migration
     public function up()
     {
         Schema::table('videos', function (Blueprint $table) {
-            $table->longText('link')->nullable()->change();
+            $table->string('link',1000)->nullable()->change();
         });
     }
 
