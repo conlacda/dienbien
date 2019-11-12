@@ -95,6 +95,12 @@
                                                            placeholder="Nhập vào đường link facebook" name="fb_link"
                                                            value="{{$contactInfo[0]->fb_link}}">
                                                 </div>
+                                                <div class="form-group">
+                                                    <label for="email-u">Địa chỉ email</label>
+                                                    <input type="text" class="form-control" id="email-u"
+                                                           placeholder="Nhập vào địa chỉ email" name="email"
+                                                           value="{{$contactInfo[0]->email}}">
+                                                </div>
                                             </div>
                                             <!-- /.box-body -->
                                         </form>
@@ -116,7 +122,7 @@
                 </div>
                 <div class="card-body p-0" style="display: block;">
                     <table style="width:100%">
-                        <caption>Thông tin này sẽ được hiển thị tại tab Liên hệ ngoài trang chủ</caption
+                        <caption>Thông tin này sẽ được hiển thị tại tab Liên hệ ngoài trang chủ</caption>
                         <tr>
                             <td>Địa chỉ</td>
                             <td>{{$contactInfo[0]->address ?? 'Chưa điền'}}</td>
@@ -137,6 +143,10 @@
                             <td>Địa chỉ facebook</td>
                             <td>{{$contactInfo[0]->fb_link ?? 'Chưa điền'}}</td>
                         </tr>
+                        <tr>
+                            <td>Địa chỉ email:</td>
+                            <td>{{$contactInfo[0]->email ?? 'Chưa điền'}}</td>
+                        </tr>
                     </table>
                 </div>
             </div>
@@ -152,7 +162,8 @@
                 'phone': $('#phone-u').val(),
                 'hotline': $('#hotline-u').val(),
                 'bank_account': $('#backaccount-u').val(),
-                'fb_link': $('#fb_link-u').val()
+                'fb_link': $('#fb_link-u').val(),
+                'email': $("#email-u").val()
             }).then(function (res) {
                 $('#edit-form').modal('hide');
                 alertify.alert(res.data.message).set({title: "Cập nhật thông tin liên hệ"});

@@ -77,6 +77,7 @@ class ContactController extends Controller
         $contact->hotline = $request['hotline'];
         $contact->bank_account = $request['bank_account'];
         $contact->fb_link = $request['fb_link'];
+        $contact->email = $request['email'];
         $contact->save();
         return response()->json(["message" => "Lưu thành công"]);
     }
