@@ -149,17 +149,6 @@
                             </div><!-- End_Module_530 --></div>
                         <div style="clear:both;"></div>
                     </div>
-                    <div class="DnnModule DnnModule-TNHtml DnnModule-562"><a name="562"></a>
-                        <div id="dnn_ctr562_ContentPane"><!-- Start_Module_562 -->
-                            <div id="dnn_ctr562_ModuleContent" class="DNNModuleContent ModTNHtmlC">
-                                <a href="http://nfvc.org.vn/tin-dia-phuong/chuong-trinh-ao-am-mua-dong-cho-tre-em-dan-toc-thieu-so_t114c28n2015#.XRM6Ex83vIU"><img
-                                        src="/Portals/0/ao-am3.png" style=""></a><br>
-
-                                <span id="dnn_ctr562_Main_lblMessage" style="clear: both;"></span>
-
-                            </div><!-- End_Module_562 --></div>
-                        <div style="clear:both;"></div>
-                    </div>
                 </div>
                 {{--                ! end Main section--}}
                 @include('layouts.right-col')
