@@ -37,7 +37,7 @@ Route::namespace('Guest')->group(function () {
 
     Route::name('newspost.')->prefix('/tin-tức')->group(function () {
         Route::get('/', 'NewsPostController@index')->name('index');
-        Route::get('/slug', 'NewsPostController@slug')->name('slug');
+//        Route::get('/slug', 'NewsPostController@slug')->name('slug');
     });
 
     Route::name('gallery.')->prefix('/thu-vien-anh')->group(function () {

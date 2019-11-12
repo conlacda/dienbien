@@ -16,10 +16,10 @@ class NewsPostController extends GeneralController
     public function index()
     {
         $posts = NewsPost::paginate(15);
-        return $posts;
+        return view('news.index',compact('posts'));
     }
 
-    public function slug($slug)
+    public function slug($slug) // ko dùng mà dùng modal đọc luôn
     {
         $post = NewsPost::where('slug',$slug)->first();
         return $post;
