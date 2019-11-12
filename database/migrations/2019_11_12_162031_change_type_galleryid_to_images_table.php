@@ -17,7 +17,7 @@ class ChangeTypeGalleryidToImagesTable extends Migration
             $table->dropColumn('gallery_id');
         });
         Schema::table('images', function (Blueprint $table) {
-            $table->integer('gallery_id');
+            $table->bigInteger('gallery_id');
         });
     }
 
