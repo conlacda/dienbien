@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeLinkToLongtextVideosTable extends Migration
+class AddEmailContactInformationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class ChangeLinkToLongtextVideosTable extends Migration
      */
     public function up()
     {
-        Schema::table('videos', function (Blueprint $table) {
-            $table->longText('link')->nullable()->change();
+        Schema::table('contact_informations', function (Blueprint $table) {
+            $table->string('email')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ class ChangeLinkToLongtextVideosTable extends Migration
      */
     public function down()
     {
-        Schema::table('videos', function (Blueprint $table) {
-            //
+        Schema::table('contact_informations', function (Blueprint $table) {
+            $table->dropColumn('email');
         });
     }
 }

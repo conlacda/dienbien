@@ -199,6 +199,7 @@
                 <p>Hotline: {{$contact->hotline}}</p>
                 <p>Tài khoản Quỹ: {{$contact->bank_account}}</p>
                 <p>Đối thoại (Trao đổi) : {{$contact->fb_link}}</p>
+                <p>Email: {{$contact->email}}</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>

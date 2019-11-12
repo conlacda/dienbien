@@ -300,6 +300,7 @@
                                                         thoai: {{$contact->phone}}</a></li>
                                                 <li><a href="{{$contact->fb_link}}" target="_blank">Đường link
                                                         facebook</a></li>
+                                                <li><a href="mailto:{{$contact->email}}">Email: {{$contact->email}}</a></li>
                                             </ul>
                                         </div>
                                     </div>
