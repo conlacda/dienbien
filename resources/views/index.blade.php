@@ -378,7 +378,7 @@
                                         </div>
                                         <div class="xright">
                                             <marquee behavior="scroll" direction="left" scrolldelay="200"><span
-                                                    id="dnn_ctr848_Main_UserNewsView_TaikhoanTiepnhan_Label110">Tài khoản ngân hàng : đang cập nhật</span>
+                                                    id="dnn_ctr848_Main_UserNewsView_TaikhoanTiepnhan_Label110">Tài khoản ngân hàng : 3761.0.1113493.91012 Kho bạc nhà nước tỉnh Điện Biên</span>
                                             </marquee>
                                         </div>
                                         <div style="clear:both;"></div>
