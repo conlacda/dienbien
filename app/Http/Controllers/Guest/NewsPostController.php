@@ -7,12 +7,11 @@ use App\Http\Controllers\Controller;
 use App\NewsPost;
 use Illuminate\Http\Request;
 
-class NewsPostController extends Controller
+class NewsPostController extends GeneralController
 {
     public function __construct()
     {
-        $this->contact = ContactInformation::latest()->first();
-        view()->share('contact', $this->contact);
+        parent::__construct();
     }
     public function index()
     {

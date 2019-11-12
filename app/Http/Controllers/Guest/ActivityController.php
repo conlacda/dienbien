@@ -9,12 +9,11 @@ use App\ContactInformation;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
 
-class ActivityController extends Controller
+class ActivityController extends GeneralController
 {
     public function __construct()
     {
-        $this->contact = ContactInformation::latest()->first();
-        view()->share('contact',$this->contact);
+        parent::__construct();
     }
     public function index()
     {

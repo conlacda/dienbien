@@ -32,10 +32,8 @@
                     <div style="clear:both"></div>
                     <div class="yhitem">
      <span>
-      TK tiền Việt:   001.0.00.0000355<br>
-      TK ngoại tệ:  001.0.37.0002165<br>
-      Tại: Sở giao dịch ngân hàng<br>
-      TMCP Ngoại thương Việt Nam<br>
+      TK ngân hàng: 3761.0.1113493.91012<br>
+      Tại: Kho bạc nhà nước tỉnh Điện Biên<br>
      </span>
                     </div>
                 </div>
@@ -78,102 +76,79 @@
             </div><!-- End_Module_838 --></div>
         <div style="clear:both;"></div>
     </div>
-    <div class="DnnModule DnnModule-TNHtml DnnModule-839"><a name="839"></a>
-        <div id="dnn_ctr839_ContentPane"><!-- Start_Module_839 -->
-            <div id="dnn_ctr839_ModuleContent" class="DNNModuleContent ModTNHtmlC">
-                <style>
-                    .tnnewscate2_nochild .zhitem {
-                        padding: 10px 10px 5px 10px;
-                        height: 115px;
-                        overflow: hidden;
-                    }
 
-                    .tnnewscate2_nochild .zhitem ul li {
-                        display: block;
+{{--    --}}
+    <div class="DnnModule DnnModule-TNNewsSolution DnnModule-524"><a name="524"></a>
+        <div id="dnn_ctr524_ContentPane"><!-- Start_Module_524 -->
+            <div id="dnn_ctr524_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">
 
-                    }
 
-                    .tnnewscate2_nochild .zhitem ul li a {
-                        font: normal 13px/28px Open Sans Semibold;
-                        color: #0073b9;
-                        margin-left: 12px;
-                        display: block
-                    }
-
-                    .tnnewscate2_nochild .zhitem ul li a:hover {
-                        color: #666
-                    }
-                </style>
-                <div class="tnnewscate2_nochild">
-                    <div class="xcate">
+                <div mid="524" class="tnnewscate1_nochild">
+                    <div class="xcate" style="background: #0073b9">
                         <div class="xparent">
                             <div class="xlink">
-                                <span>Trang địa phương</span>
+                                <a href="{{route('activity.index')}}"><span>Chương trình đã thực hiện</span></a>
                             </div>
                         </div>
-                    </div>
-                    <div style="clear:both"></div>
-                    <div class="zhitem">
-                        <ul>
-                            <li><a href="/he-thong-quy-btte-cac-tinh_t230c29">Hệ thống quỹ BTTE các
-                                    tỉnh</a></li>
-                            <li><a href="tin-dia-phuong_t113c28">Tin địa phương</a></li>
-                        </ul>
-                    </div>
-                </div>
+                        <div id="dnn_ctr524_Main_UserNewsBoxCategory_vs3_NoChild1__DanhMucCon">
 
-                <span id="dnn_ctr839_Main_lblMessage" style="clear: both;"></span>
-
-            </div><!-- End_Module_839 --></div>
-        <div style="clear:both;"></div>
-    </div>
-    <div class="DnnModule DnnModule-TNHtml DnnModule-849"><a name="849"></a>
-        <div id="dnn_ctr849_ContentPane"><!-- Start_Module_849 -->
-            <div id="dnn_ctr849_ModuleContent" class="DNNModuleContent ModTNHtmlC">
-                <style>
-                    .tnnewscate2_nochild .xhitem {
-                        padding: 10px 10px 5px 10px;
-                        background: #EDECEC;
-                        height: 115px;
-                        overflow: hidden;
-                    }
-
-                    .tnnewscate2_nochild .xhitem ul li {
-                        display: block
-                    }
-
-                    .tnnewscate2_nochild .xhitem ul li a {
-                        font: normal 13px/28px Open Sans Semibold;
-                        color: #0073b9;
-                        margin-left: 12px;
-                        display: block
-                    }
-
-                    .tnnewscate2_nochild .xhitem ul li a:hover {
-                        color: #666
-                    }
-                </style>
-                <div class="tnnewscate2_nochild">
-                    <div class="xcate">
-                        <div class="xparent">
-                            <div class="xlink">
-                                <span>Bảng vàng tài trợ</span>
-                            </div>
                         </div>
                     </div>
-                    <div style="clear:both"></div>
-                    <div class="xhitem">
-                        <ul>
-                            <li><a href="/danh-sach-tai-tro-hang-thang_t113c23">Danh sách tài trợ hàng
-                                    tháng</a></li>
-                            <li><a href="/bang-vang-tai-tro_t113c20">Bảng vàng tài trợ</a></li>
-                        </ul>
+                    <div class="xnews">
+                        @foreach($activities as $activity)
+                            <div class="xitem">
+                                <div class="imgnews">
+                                    <a href="#" data-toggle="modal"
+                                       data-target="#activity-{{$activity->id}}"
+                                       title="{{$activity->title}}">
+                                        <img
+                                            alt="{{$activity->title}}"
+                                            src="{{$activity->cover_img}}">
+                                    </a>
+                                </div>
+                                <h2 class="xlink">
+                                    <a href="#" data-toggle="modal"
+                                       data-target="#activity-{{$activity->id}}"
+                                       title="{{$activity->title}}">
+                                        {{$activity->title}}
+                                    </a>
+                                </h2>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="activity-{{$activity->id}}" tabindex="-1"
+                                 role="dialog" aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title"
+                                                id="exampleModalLabel">{{$activity->title}}</h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="offset-md-3 col-md-6">
+                                                <img src="{{$activity->cover_img}}" style="width: 400px">
+                                            </div>
+                                            {!! $activity->content !!}
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Xong
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end Modal -->
+                        @endforeach
                     </div>
                 </div>
-
-                <span id="dnn_ctr849_Main_lblMessage" style="clear: both;"></span>
-
-            </div><!-- End_Module_849 --></div>
+                <div style="clear: both;"></div>
+                <div style="clear: both;"></div>
+            </div><!-- End_Module_524 --></div>
         <div style="clear:both;"></div>
     </div>
     <div class="DnnModule DnnModule-TNHtml DnnModule-862"><a name="862"></a>

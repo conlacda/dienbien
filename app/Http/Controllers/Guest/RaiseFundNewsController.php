@@ -9,16 +9,15 @@ use App\Http\Controllers\Controller;
 use App\RaiseFundPost;
 use Illuminate\Http\Request;
 
-class RaiseFundNewsController extends Controller
+class RaiseFundNewsController extends GeneralController
 {
     public function __construct()
     {
-        $this->contact = ContactInformation::latest()->first();
-        view()->share('contact', $this->contact);
+        parent::__construct();
     }
     public function index(Request $request)
     {
-        if (!isset($request->type)) {
+        if (!isset($request->type) || $request->type!= "member") {
             $request->type = 'admin';
         }
         // request->type sẽ lưu loại bài viết

@@ -7,12 +7,11 @@ namespace App\Http\Controllers\Guest;
 use App\ContactInformation;
 use App\Gallery;
 
-class GalleryController
+class GalleryController extends GeneralController
 {
     public function __construct()
     {
-        $this->contact = ContactInformation::latest()->first();
-        view()->share('contact',$this->contact);
+        parent::__construct();
     }
 
     public function index()

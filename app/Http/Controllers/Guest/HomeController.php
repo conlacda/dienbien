@@ -15,11 +15,11 @@ use App\Video;
 
 // Controller ở trang chủ ngoài cùng
 
-class HomeController extends Controller
+class HomeController extends GeneralController
 {
     public function __construct()
     {
-
+        parent::__construct();
     }
     public function index()
     {

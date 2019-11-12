@@ -11,12 +11,11 @@ use App\Children4;
 use App\ContactInformation;
 use Illuminate\Database\Eloquent\Model;
 
-class ChildrenController extends Model
+class ChildrenController extends GeneralController
 {
     public function __construct()
     {
-        $this->contact = ContactInformation::latest()->first();
-        view()->share('contact', $this->contact);
+        parent::__construct();
     }
 
     public function index()

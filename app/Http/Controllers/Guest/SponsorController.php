@@ -9,12 +9,11 @@ use App\Http\Controllers\Controller;
 use App\Sponsor;
 use Illuminate\Database\Eloquent\Model;
 
-class SponsorController extends Controller
+class SponsorController extends GeneralController
 {
     public function __construct()
     {
-        $this->contact = ContactInformation::latest()->first();
-        view()->share('contact', $this->contact);
+        parent::__construct();
     }
 
     public function index()

@@ -102,7 +102,7 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <h3 style="color: orange">{{$post->title}}</h3>
+                                                            <h3 style="color: #2d5adc">{{$post->title}}</h3>
                                                             {!! $post->content !!}
                                                         </div>
                                                         <div class="modal-footer">

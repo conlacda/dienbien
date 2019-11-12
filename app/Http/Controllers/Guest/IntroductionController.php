@@ -8,12 +8,11 @@ use App\ContactInformation;
 use App\Http\Controllers\Controller;
 use App\Introduction;
 
-class IntroductionController extends Controller
+class IntroductionController extends GeneralController
 {
     public function __construct()
     {
-        $this->contact = ContactInformation::latest()->first();
-        view()->share('contact', $this->contact);
+        parent::__construct();
     }
 
     public function index()
