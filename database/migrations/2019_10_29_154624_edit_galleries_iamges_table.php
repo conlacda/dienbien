@@ -14,7 +14,7 @@ class EditGalleriesIamgesTable extends Migration
     public function up()
     {
         Schema::table('images', function (Blueprint $table) {
-            $table->string('link')->nullable();
+            $table->longText('link')->nullable();
         });
         Schema::table('galleries', function (Blueprint $table) {
             $table->longText('introduction')->nullable();

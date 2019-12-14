@@ -29,7 +29,7 @@ class ChangeTypeGalleryidToImagesTable extends Migration
     public function down()
     {
         Schema::table('images', function (Blueprint $table) {
-            $table->string('gallery_id')->change();
+            $table->longText('gallery_id')->change();
         });
     }
 }

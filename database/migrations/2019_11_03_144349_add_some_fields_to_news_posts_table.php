@@ -15,17 +15,17 @@ class AddSomeFieldsToNewsPostsTable extends Migration
     {
         Schema::create('raise_fund_posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('user_id');
+            $table->longText('user_id');
             $table->longText('content')->nullable();
             $table->longText('title');
-            $table->string('type')->nullable();
+            $table->longText('type')->nullable();
             $table->string('status')->default('private'); // public
             $table->timestamps();
         });
         Schema::table('galleries', function (Blueprint $table) {
-            $table->string('user_id')->nullable();
-            $table->string('poster')->nullable(); // admin or member
-            $table->string('status')->nullable(); // public or unpblic
+            $table->longText('user_id')->nullable();
+            $table->longText('poster')->nullable(); // admin or member
+            $table->longText('status')->nullable(); // public or unpblic
         });
     }
 

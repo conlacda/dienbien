@@ -15,11 +15,11 @@ class CreateSponsors extends Migration
     {
         Schema::create('sponsors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('year')->nullable();
-            $table->string('name')->nullable();
-            $table->string('link')->nullable();
-            $table->string('slug')->nullable();
-            $table->string('introduction')->nullable();
+            $table->longText('year')->nullable();
+            $table->longText('name')->nullable();
+            $table->longText('link')->nullable();
+            $table->longText('slug')->nullable();
+            $table->longText('introduction')->nullable();
             $table->string('cover_img')->default('/images/sponsor.png');
             $table->longText('content')->nullable();
             $table->timestamps();

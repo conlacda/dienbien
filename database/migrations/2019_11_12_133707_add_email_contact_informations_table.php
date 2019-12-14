@@ -14,7 +14,7 @@ class AddEmailContactInformationsTable extends Migration
     public function up()
     {
         Schema::table('contact_informations', function (Blueprint $table) {
-            $table->string('email')->nullable();
+            $table->longText('email')->nullable();
         });
     }
 

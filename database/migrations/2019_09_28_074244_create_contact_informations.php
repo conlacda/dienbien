@@ -15,11 +15,11 @@ class CreateContactInformations extends Migration
     {
         Schema::create('contact_informations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('address')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('hotline')->nullable();
-            $table->string('bank_account')->nullable();
-            $table->string('fb_link')->nullable();
+            $table->longText('address')->nullable();
+            $table->longText('phone')->nullable();
+            $table->longText('hotline')->nullable();
+            $table->longText('bank_account')->nullable();
+            $table->longText('fb_link')->nullable();
             $table->timestamps();
         });
     }
