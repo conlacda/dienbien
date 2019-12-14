@@ -5039,7 +5039,7 @@ a.next2:hover {
 }
 
 .tnalbum_gwrap a#prev:hover {
-    background: url(/images/newsimage/arrow_l_hover.png) center center no-repeat;
+    background: url(/images/newsimage/arrow_l.png) center center no-repeat;
 }
 
 .tnalbum_gwrap a#next {
@@ -5053,7 +5053,7 @@ a.next2:hover {
 }
 
 .tnalbum_gwrap a#next:hover {
-    background: url(/images/newsimage/arrow_r_hover.png) center center no-repeat;
+    background: url(/images/newsimage/arrow_r.png) center center no-repeat;
 }
 
 /******************** TIN QUAN TÂM SLIDE SCROLL ********************/
@@ -5154,7 +5154,7 @@ a.next2:hover {
 }
 
 .tnnewsquantam_gwrap a#prev:hover {
-    background: url(/images/newsimage/arrow_l_hover.png) center center no-repeat;
+    background: url(/images/newsimage/arrow_l.png) center center no-repeat;
 }
 
 .tnnewsquantam_gwrap a#next {
@@ -5168,5 +5168,5 @@ a.next2:hover {
 }
 
 .tnnewsquantam_gwrap a#next:hover {
-    background: url(newsimage/arrow_r_hover.png) center center no-repeat;
+    background: url(newsimage/arrow_r.png) center center no-repeat;
 }

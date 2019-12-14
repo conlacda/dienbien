@@ -159,7 +159,7 @@
 
                                         .tnnewscate2_nochild .xhitem ul li {
                                             display: block;
-                                            background: url(/images/newimage/bullet.png) 0 13px no-repeat;
+                                            background: url(/images/newsimage/bullet.png) 0 13px no-repeat;
                                         }
 
                                         .tnnewscate2_nochild .xhitem ul li a {
