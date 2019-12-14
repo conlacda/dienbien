@@ -1,0 +1,100 @@
+.my-title {
+    background-color: #e36f26;
+    color: white;
+    padding: 0 10px;
+    margin-bottom: 2px;
+    height: 30px;
+}
+
+
+li {
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.tnnewscate2_nochild .xhitem {
+    padding: 10px 10px 5px 10px;
+    background: #EDECEC;
+    height: 115px;
+    overflow: hidden;
+}
+
+.tnnewscate2_nochild .xhitem ul li {
+    display: block;
+    background: url(/images/newsimage/bullet.png) 0 13px no-repeat;
+}
+
+.tnnewscate2_nochild .xhitem ul li a {
+    font: normal 13px/28px Open Sans Semibold;
+    color: #0073b9;
+    margin-left: 12px;
+    display: block
+}
+
+.tnnewscate2_nochild .xhitem ul li a:hover {
+    color: #666
+}
+
+
+.tnnewscate2_nochild .zhitem {
+    padding: 10px 10px 5px 10px;
+    height: 115px;
+    overflow: hidden;
+    background: #EDECEC center right no-repeat;
+}
+
+.tnnewscate2_nochild.zhitem ul li {
+    display: block;
+    background: url(/images/newsimage/bullet.png) 0 13px no-repeat;
+}
+
+.tnnewscate2_nochild.zhitem ul li a {
+    font: normal 13px/28px Open Sans Semibold;
+    color: #0073b9;
+    margin-left: 12px;
+    display: block
+}
+
+.tnnewscate2_nochild.zhitem ul li a:hover {
+    color: #666
+}
+
+.xtaitro {
+    background: #edecec;
+}
+
+.xtaitro .xleft {
+    float: left;
+    background: #e36f26;
+    margin-right: 10px;
+    color: #fff;
+    font: normal 12px/32px Open Sans Semibold;
+    text-transform: uppercase;
+    width: 22%;
+    padding: 0 10px;
+}
+
+.xtaitro .xright {
+    float: right;
+    color: #0073b9;
+    font: normal 12px/32px Open Sans Semibold;
+    text-align: center;
+    width: 70%;
+    padding: 0 10px;
+}
+
+.myoverlay .xheader {
+    text-align: center;
+    font: 16px/28px Open Sans Semibold;
+    color: #0073B9;
+    text-transform: uppercase
+}
+
+.myoverlay .xtext {
+    font: 14px/20px Open Sans Semibold;
+    color: #666;
+}
+
+.myoverlay .xtitle {
+    font: italic 13px/20px Open Sansz;
+    color: #333;
+}
