@@ -15,9 +15,9 @@ class CreateNewsPostsTable extends Migration
     {
         Schema::create('news_posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('slug');
-            $table->string('cover_img')->default('/images/news-default.jpg');
-            $table->string('title');
+            $table->longText('slug');
+            $table->longText('cover_img')->default('/images/news-default.jpg');
+            $table->longText('title');
             $table->longText('content');
             $table->timestamps();
         });

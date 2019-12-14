@@ -15,11 +15,11 @@ class CreateChildren2sTable extends Migration
     {
         Schema::create('children2s', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title')->nullable();
+            $table->longText('title')->nullable();
             $table->longText('content')->nullable();
-            $table->string('status')->nullable();
-            $table->string('cover_img')->default('/images/news.png');
-            $table->string('slug')->nullable();
+            $table->longText('status')->nullable();
+            $table->longText('cover_img')->default('/images/news.png');
+            $table->longText('slug')->nullable();
             $table->timestamps();
         });
     }

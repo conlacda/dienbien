@@ -15,12 +15,12 @@ class CreateActivities extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('time')->nullable();
-            $table->string('title')->nullable();
+            $table->longText('time')->nullable();
+            $table->longText('title')->nullable();
             $table->longText('content')->nullable();
-            $table->string('status')->nullable();
-            $table->string('slug')->nullable();
-            $table->string('cover_img')->default('/images/activity.jpg');
+            $table->longText('status')->nullable();
+            $table->longText('slug')->nullable();
+            $table->longText('cover_img')->default('/images/activity.jpg');
             $table->timestamps();
         });
     }

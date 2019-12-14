@@ -16,9 +16,9 @@ class CreateDocumentsTable extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->string('link')->nullable();
-            $table->string('title')->nullable();
-            $table->string('slug')->nullable();
+            $table->longText('link')->nullable();
+            $table->longText('title')->nullable();
+            $table->longText('slug')->nullable();
             $table->timestamps();
         });
     }

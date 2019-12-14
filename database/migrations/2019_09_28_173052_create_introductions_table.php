@@ -15,8 +15,8 @@ class CreateIntroductionsTable extends Migration
     {
         Schema::create('introductions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title')->nullable();
-            $table->string('slug')->nullable();
+            $table->longText('title')->nullable();
+            $table->longText('slug')->nullable();
             $table->longText('content')->nullable();
             $table->timestamps();
         });
