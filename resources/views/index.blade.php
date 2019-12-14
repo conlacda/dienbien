@@ -215,7 +215,7 @@
 
                                         .tnnewscate2_nochild .xhitem ul li {
                                             display: block;
-                                            background: url /images/ _default /Skins/ TTVN /newsimage/ bullet . png) 0 13 px no-repeat;
+                                            background: url(/images/default/Skins/TTVN/newsimage/bullet.png) 0 13 px no-repeat;
                                         }
 
                                         .tnnewscate2_nochild .xhitem ul li a {
@@ -841,7 +841,7 @@
 
 
                         {{-- !! Chương trình đã tổ chức End--}}
-                        <div class="DnnModule DnnModule-TNNewsSolution DnnModule-752"><a name="752"></a>
+                        <div class="DnnModule DnnModule-TNNewsSolution DnnModule-752">
                             <div id="dnn_ctr752_ContentPane">
                                 <!-- Start_Module_752 -->
                                 <div id="dnn_ctr752_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">
