@@ -33,25 +33,8 @@
 
 
 <link rel="stylesheet" href="/custom/index.css">
-<style>
+<link rel="stylesheet" href="/css/app.css">
 
-    .summary-hidden {
-        color: white;
-        width: 100%;
-        height: 150px;
-        overflow: hidden;
-    }
-
-    .summary-hidden1 {
-        color: white;
-        height: 150px;
-        overflow: hidden;
-    }
-    img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-</style>
 @stack('css')
 
 @include('layouts.navbar')

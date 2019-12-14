@@ -42,55 +42,6 @@
                                     </div>
                                 </div>
 
-                                {{--                                <div class="xshower" index="1">--}}
-                                {{--                                    <a>--}}
-                                {{--                                        <img alt="" src="/images/0/NEWS_IMAGES/host/2017_5/vi_quyenphattriens.png"--}}
-                                {{--                                             class="imgnews"/>--}}
-                                {{--                                    </a>--}}
-                                {{--                                    <div class="xnewsinfo">--}}
-                                {{--                                        <div style="margin:6px;">--}}
-                                {{--                                            <a style="text-decoration:none;" href="/slide/quyen-phat-trien_t114c34n184">--}}
-                                {{--                                                <span class="xtitle">Quyền phát triển</span>--}}
-                                {{--                                            </a>--}}
-                                {{--                                            <div style="clear:both;height:8px;"></div>--}}
-                                {{--                                            <span class="xsubject"></span>--}}
-                                {{--                                        </div>--}}
-                                {{--                                    </div>--}}
-                                {{--                                </div>--}}
-
-                                {{--                                <div class="xshower" index="2">--}}
-                                {{--                                    <a>--}}
-                                {{--                                        <img alt="" src="/images/0/NEWS_IMAGES/host/2014_5/vi-quyenbaove.png"--}}
-                                {{--                                             class="imgnews"/>--}}
-                                {{--                                    </a>--}}
-                                {{--                                    <div class="xnewsinfo">--}}
-                                {{--                                        <div style="margin:6px;">--}}
-                                {{--                                            <a style="text-decoration:none;" href="/slide/quyen-bao-ve_t114c34n1">--}}
-                                {{--                                                <span class="xtitle">Quyền bảo vệ</span>--}}
-                                {{--                                            </a>--}}
-                                {{--                                            <div style="clear:both;height:8px;"></div>--}}
-                                {{--                                            <span class="xsubject"></span>--}}
-                                {{--                                        </div>--}}
-                                {{--                                    </div>--}}
-                                {{--                                </div>--}}
-
-                                {{--                                <div class="xshower" index="3">--}}
-                                {{--                                    <a>--}}
-                                {{--                                        <img alt="" src="/images/0/NEWS_IMAGES/host/2017_5/vi_quyenthamgias.png"--}}
-                                {{--                                             class="imgnews"/>--}}
-                                {{--                                    </a>--}}
-                                {{--                                    <div class="xnewsinfo">--}}
-                                {{--                                        <div style="margin:6px;">--}}
-                                {{--                                            <a style="text-decoration:none;" href="/slide/quyen-tham-gia_t114c34n2">--}}
-                                {{--                                                <span class="xtitle">Quyền tham gia</span>--}}
-                                {{--                                            </a>--}}
-                                {{--                                            <div style="clear:both;height:8px;"></div>--}}
-                                {{--                                            <span class="xsubject"></span>--}}
-                                {{--                                        </div>--}}
-                                {{--                                    </div>--}}
-                                {{--                                </div>--}}
-
-
                                 <div class="listnews">
                                 </div>
                                 <div style="clear:both;height:10px;"></div>
@@ -903,7 +854,6 @@
             </div>
         </div>
     </div>
-
 @endsection
 @push('js')
     <script>
