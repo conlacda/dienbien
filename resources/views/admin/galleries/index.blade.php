@@ -68,6 +68,7 @@
                                 </div>
                             </div>
                         @endforeach
+                        {{ $galleries->links() }}
                     </div>
                 </div>
                 <!-- /.card-body -->

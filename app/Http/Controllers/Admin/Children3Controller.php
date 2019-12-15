@@ -20,7 +20,7 @@ class Children3Controller extends Controller
 
     public function index()
     {
-        $posts = $this->repo->model::all();
+        $posts = $this->repo->model::paginate(5);
         return view('admin.children.index', compact('posts'));
     }
 

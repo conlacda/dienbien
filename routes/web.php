@@ -52,6 +52,10 @@ Route::namespace('Guest')->group(function () {
     Route::name('raise-fund-news.')->prefix('/tin-tức-và-gây-quỹ')->group(function(){
         Route::get('/','RaiseFundNewsController@index')->name('index');
     });
+
+    Route::name('ajax.')->prefix('/ajax')->group(function(){
+       Route::post('/post/{id}','AjaxController@post')->name('post');
+    });
 });
 
 

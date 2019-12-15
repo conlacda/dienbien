@@ -11,7 +11,7 @@ class UserPostController extends Controller
 {
     public function index()
     {
-        $posts = RaiseFundPost::where('type','member')->where('status','private')->paginate(15);
+        $posts = RaiseFundPost::where('type','member')->where('status','private')->paginate(5);
         return view('admin.userpost.index',compact('posts'));
     }
 

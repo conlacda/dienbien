@@ -246,66 +246,13 @@
                                                 <a href="{{route('newspost.index')}}"><span>Tin tức - Sự kiện</span></a>
                                             </div>
                                         </div>
-                                        <div id="dnn_ctr535_Main_UserNewsBoxCategory_vs3_NoChild__DanhMucCon">
 
-                                            <div class="childtab childtab535" style="display:none;">
-                                                <ul>
-
-                                                    <li>
-                                                        <a href="/tin-tuc-su-kien/quyen-song-con_t113c33">
-                                                            <h2 class="iconheadnews">
-                                                                <span
-                                                                    class="xtitlehead"><span>Quyền sống còn</span></span>
-                                                            </h2>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="/tin-tuc-su-kien/quyen-phat-trien_t113c32">
-                                                            <h2 class="iconheadnews">
-                                                                <span
-                                                                    class="xtitlehead"><span>Quyền phát triển</span></span>
-                                                            </h2>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="/tin-tuc-su-kien/quyen-bao-ve_t113c14">
-                                                            <h2 class="iconheadnews">
-                                                                <span
-                                                                    class="xtitlehead"><span>Quyền bảo vệ</span></span>
-                                                            </h2>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="/tin-tuc-su-kien/quyen-tham-gia_t113c21">
-                                                            <h2 class="iconheadnews">
-                                                                <span
-                                                                    class="xtitlehead"><span>Quyền tham gia</span></span>
-                                                            </h2>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="/tin-tuc-su-kien/cac-chuong-trinh-khac_t113c22">
-                                                            <h2 class="iconheadnews">
-                                                                <span
-                                                                    class="xtitlehead"><span>Các chương trình khác</span></span>
-                                                            </h2>
-                                                        </a>
-                                                    </li>
-
-                                                </ul>
-                                            </div>
-
-                                        </div>
                                     </div>
                                     <div class="clear"></div>
                                     <div class="xnews">
                                         <div class="xleft">
                                             <div style="padding:10px;">
-                                                {{--                                                    Nội dung tin tức - sự kiện cột trái , dưới là cột phải--}}
+                                                {{--  Nội dung tin tức - sự kiện cột trái , dưới là cột phải--}}
                                                 @if (count($news)>=1 )
                                                     <div class="imgnews">
                                                         <a href="#" data-toggle="modal"
@@ -323,7 +270,7 @@
                                                             </div>
                                                         </a>
                                                     </h2>
-                                                    {{--                                                    -----------------}}
+                                                    {{--  -----------------}}
                                                     <div class="modal fade" id="post-{{$news[0]->id}}" tabindex="-1"
                                                          role="dialog" aria-labelledby="exampleModalLabel"
                                                          aria-hidden="true">
@@ -358,19 +305,19 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="xright">
+                                        <div class="xright" id="app">
                                             @if (count($news) > 1)
                                                 @foreach($news as $post)
                                                     <div class="xitem">
                                                         <h2 class="xlink">
-                                                            <a href="#" title="#" data-toggle="modal"
+                                                            <a title="#" @click="getContent({{$post->id}})"
                                                                data-target="#post1-{{$post->id}}">
                                                                 {{$post->title}}
                                                             </a>
                                                         </h2>
                                                     </div>
-                                                    {{--                                                        Modal -----------}}
-                                                    <div class="modal fade" id="post1-{{$post->id}}" tabindex="-1"
+                                                    {{--  Modal xxxx-----------}}
+                                                    <div class="modal fade" id="news-modal" tabindex="-1"
                                                          role="dialog" aria-labelledby="exampleModalLabel"
                                                          aria-hidden="true">
                                                         <div class="modal-dialog modal-lg" role="document">
@@ -384,9 +331,9 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <img src="{{$post->cover_img}}">
-                                                                    <p style="color: #2d5adc">{{$post->title}}</p>
-                                                                    {!! $post->content !!}
+                                                                    <img v-bind:src="cover_img">
+                                                                    <p style="color: #2d5adc">@{{title}}</p>
+                                                                    <div v-html="content"></div>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary"
@@ -856,6 +803,8 @@
     </div>
 @endsection
 @push('js')
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         $(document).ready(function () {
             // setInterval(function(){ alert("Hello"); }, 3000);
@@ -870,6 +819,30 @@
                 $(".sponsor-" + index).show();
                 console.log(index);
             }, 5000);
+        });
+        var app = new Vue({
+            el: '#app',
+            data: {
+                title : '',
+                content: '',
+                cover_img: '',
+            },
+            methods: {
+                getContent: function (id) {
+                    axios.post('/ajax/post/' + id, {}).then(function (res) {
+                        if (res.data.message != 'ok'){
+                            app.title = "Không tìm thấy bài viết"
+                        } else {
+                            app.title = res.data.title;
+                            app.content = res.data.content;
+                            app.cover_img = res.data.cover_img;
+                        }
+                    }).catch(function (err) {
+                        console.log(err.data);
+                    });
+                    $('#news-modal').modal('show');
+                }
+            },
         });
     </script>
 @endpush

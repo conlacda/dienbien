@@ -14,7 +14,7 @@ class NewsPostController extends Controller
 {
     public function index()
     {
-        $posts = NewsPost::paginate(15);
+        $posts = NewsPost::paginate(5);
         return view('admin.news.index', compact('posts'));
     }
 

@@ -83,7 +83,8 @@
                                 </td>
                                 <td>
                                     <div class="content-hidden">
-                                        {!! $post->content!!}
+{{--                                        {!! $post->content!!}--}}
+                                        Nhấn nút Xem để hiển thị bản xem trước
                                     </div>
                                 </td>
                                 <td>
@@ -119,7 +120,7 @@
                                     <!-- Modal -->
                                     <div class="modal fade" id="{{$post->slug}}" tabindex="-1" role="dialog"
                                          aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
+                                        <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title"
@@ -148,6 +149,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    {{ $posts->links() }}
                 </div>
                 <!-- /.card-body -->
             </div>
