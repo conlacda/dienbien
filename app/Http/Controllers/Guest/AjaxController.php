@@ -20,6 +20,7 @@ class AjaxController extends GeneralController
                 'title' => '',
                 'content' => '',
                 'cover_img' => '',
+                'created_at' => '',
                 'message' => 'null'
             ]);
         else {
@@ -27,6 +28,7 @@ class AjaxController extends GeneralController
                 'title' => $post->title,
                 'content' => $post->content,
                 'cover_img' => $post->cover_img,
+                'created_at' => $post->created_at,
                 'message' => 'ok'
             ]);
         }

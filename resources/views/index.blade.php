@@ -331,8 +331,10 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <img v-bind:src="cover_img">
-                                                                    <p style="color: #2d5adc">@{{title}}</p>
+                                                                    <div style="text-align: center;">
+                                                                        <img v-bind:src="cover_img">
+                                                                        <p style="color: #2d5adc">@{{title}}</p>
+                                                                    </div>
                                                                     <div v-html="content"></div>
                                                                 </div>
                                                                 <div class="modal-footer">
@@ -823,14 +825,14 @@
         var app = new Vue({
             el: '#app',
             data: {
-                title : '',
+                title: '',
                 content: '',
                 cover_img: '',
             },
             methods: {
                 getContent: function (id) {
                     axios.post('/ajax/post/' + id, {}).then(function (res) {
-                        if (res.data.message != 'ok'){
+                        if (res.data.message != 'ok') {
                             app.title = "Không tìm thấy bài viết"
                         } else {
                             app.title = res.data.title;

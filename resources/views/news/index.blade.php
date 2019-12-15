@@ -3,7 +3,6 @@
 
 @endpush
 @section('content')
-
     <div class="fmcenter">
         <div class="TNContent">
             <div id="dnn_Top" class="DNNEmptyPane">
@@ -53,93 +52,88 @@
                             </div><!-- End_Module_538 --></div>
                         <div style="clear:both;"></div>
                     </div>
-                    <div class="DnnModule DnnModule-TNNewsSolution DnnModule-530"><a name="530"></a>
+                    <div class="DnnModule DnnModule-TNNewsSolution DnnModule-530" id="app">
                         <div id="dnn_ctr530_ContentPane"><!-- Start_Module_530 -->
                             <div id="dnn_ctr530_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">
-
-
                                 <div class="tncndemo_wrap">
                                     <div class="contentx">
                                         @if (count($posts) > 0)
                                             @foreach($posts as $index => $post)
                                                 @if ($index == 0)
-                                                        <div class="xitem first_item"
-                                                             style="  background-color: lightblue; width: 680px;height: 197px; overflow: hidden;">
-                                                            <a href="#" data-toggle="modal" data-target="#post-0"
-                                                               style="display:block;">
-                                                                <img class="ximg"
-                                                                     alt="{{$post->title}}"
-                                                                     src="{{$post->cover_img}}">
-                                                            </a>
-                                                            <h2>
-                                                                <a href="#" class="xlink" data-toggle="modal" data-target="#post-0">
-                                                                    {{$post->title}}
-                                                                </a>
-                                                            </h2>
-                                                            <div style="margin:5px 0;">
-                                                    <span id="dnn_ctr530_Main_UserNewsCategory_rptObject_Label1_0"
-                                                          class="xdate">Cập nhật: </span>
-                                                            </div>
-                                                            <span class="xsubject">{!! $post->content!!}</span>
-                                                            <div style="clear:both;"></div>
-                                                        </div>
-                                                        <div class="sep"></div>
-                                                        <div style="clear:both"></div>
-                                                @elseif ($index > 0)
-                                                    <div class="xitem"
-                                                         style="width: 680px;height: 197px; overflow: hidden;">
-                                                        <a href="#" data-toggle="modal" data-target="#post-{{$index}}"
+                                                    <div class="xitem first_item"
+                                                         style="  background-color: lightblue; width: 680px;height: 197px; overflow: hidden;">
+                                                        <a href="#" @click="getContent({{$post->id}})"
                                                            style="display:block;">
                                                             <img class="ximg"
                                                                  alt="{{$post->title}}"
                                                                  src="{{$post->cover_img}}">
                                                         </a>
                                                         <h2>
-                                                            <a href="#" class="xlink" data-toggle="modal" data-target="#post-{{$index}}">
-                                                                {{ $post->title}}
+                                                            <a href="#" class="xlink" @click="getContent({{$post->id}})"
+                                                               data-target="#post-0">
+                                                                {{$post->title}}
                                                             </a>
                                                         </h2>
                                                         <div style="margin:5px 0;">
-                                                <span id="dnn_ctr530_Main_UserNewsCategory_rptObject_Label1_1"
-                                                      class="xdate">Cập nhật: </span>
+                                                    <span id="dnn_ctr530_Main_UserNewsCategory_rptObject_Label1_0"
+                                                          class="xdate">Cập nhật: </span>
                                                         </div>
-                                                        <span class="xsubject">{!! $post->content!!}</span>
+
                                                         <div style="clear:both;"></div>
                                                     </div>
                                                     <div class="sep"></div>
                                                     <div style="clear:both"></div>
+                                                @elseif ($index > 0)
+                                                    <div class="xitem"
+                                                         style="width: 680px;height: 197px; overflow: hidden;">
+                                                        <a href="#" @click="getContent({{$post->id}})" style="display:block;">
+                                                            <img class="ximg"
+                                                                 alt="{{$post->title}}"
+                                                                 src="{{$post->cover_img}}">
+                                                        </a>
+                                                        <h2>
+                                                            <a href="#" class="xlink" @click="getContent({{$post->id}})"
+                                                               data-target="#post-{{$index}}">
+                                                                {{ $post->title}}
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div style="clear:both;"></div>
                                                 @endif
+
+                                                <div style="clear:both"></div>
                                                 <!-- Modal -->
-                                                    <div class="modal fade" id="post-{{$index}}" tabindex="-1" role="dialog"
-                                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog modal-lg" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Xem bài
-                                                                        viết</h5>
-                                                                    <button type="button" class="close" data-dismiss="modal"
-                                                                            aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
+                                                <div class="modal fade" id="news-modal" tabindex="-1" role="dialog"
+                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Xem bài
+                                                                    viết</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                        aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div style="text-align: center;">
+                                                                    <img v-bind:src="cover_img" style="width: 300px">
+                                                                    <p style="color: #2d5adc">@{{title}}</p>
                                                                 </div>
-                                                                <div class="modal-body">
-                                                                    <div class="">
-                                                                        <img src="{{$post->cover_img}}" style="width: 100%;height: auto">
-                                                                    </div>
-                                                                    <div class="content">
-                                                                        <p style="color: #1f66be">{{$post->title}}</p>
-                                                                        <p>Cập nhật: {{$post->updated_at}}</p>
-                                                                        {!! $post->content !!}
-                                                                    </div>
+
+                                                                <div class="content">
+                                                                    <p>Cập nhật: @{{ updated_at}}</p>
+                                                                    <div v-html="content"></div>
                                                                 </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-outline-info"
-                                                                            data-dismiss="modal">Xong
-                                                                    </button>
-                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-outline-info"
+                                                                        data-dismiss="modal">Xong
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
                                             @endforeach
                                         @endif
                                     </div>
@@ -179,4 +173,33 @@
     </div>
 @endsection
 @push('js')
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                title: '',
+                content: '',
+                cover_img: '',
+                updated_at: '',
+            },
+            methods: {
+                getContent: function (id) {
+                    axios.post('/ajax/post/' + id, {}).then(function (res) {
+                        if (res.data.message != 'ok') {
+                            app.title = "Không tìm thấy bài viết"
+                        } else {
+                            app.title = res.data.title;
+                            app.content = res.data.content;
+                            app.cover_img = res.data.cover_img;
+                        }
+                    }).catch(function (err) {
+                        console.log(err.data);
+                    });
+                    $('#news-modal').modal('show');
+                }
+            },
+        });
+    </script>
 @endpush
