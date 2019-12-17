@@ -66,7 +66,7 @@
                                                            style="display:block;">
                                                             <img class="ximg"
                                                                  alt="{{$post->title}}"
-                                                                 src="{{$post->cover_img}}">
+                                                                 src="{{$post->cover_img}}" style="width: 35%">
                                                         </a>
                                                         <h2>
                                                             <a href="#" class="xlink" @click="getContent({{$post->id}})"

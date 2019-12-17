@@ -1,6 +1,11 @@
 @extends('app')
 @push('css')
     <link rel="stylesheet" href="/css/index.css">
+    <style>
+        a {
+            font-size: 15px !important;
+        }
+    </style>
 @endpush
 @section('content')
 
@@ -112,9 +117,9 @@
                                     <div style="clear:both"></div>
                                     <div class="xhitem">
                                         <ul>
-                                            <li><a href="{{route('raise-fund-news.index',['type' => 'member'])}}">Tin
+                                            <li><a href="{{route('raise-fund-news.index',['type' => 'admin'])}}">Tin
                                                     tức về trẻ em</a></li>
-                                            <li><a href="{{route('raise-fund-news.index',['type' => 'admin'])}}">Bài
+                                            <li><a href="{{route('raise-fund-news.index',['type' => 'member'])}}">Bài
                                                     đăng gây quỹ từ người dùng</a></li>
                                         </ul>
                                     </div>
@@ -335,7 +340,7 @@
                                                                         <img v-bind:src="cover_img">
                                                                         <p style="color: #2d5adc">@{{title}}</p>
                                                                     </div>
-                                                                    <div v-html="content"></div>
+                                                                    <div v-html="content" style="overflow: scroll"></div>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary"
@@ -409,7 +414,7 @@
                                         </div>
                                     </div>
                                     <div id="buttons">
-                                        <a href="#" id="prev">prev</a>
+{{--                                        <a href="#" id="prev">prev</a>--}}
                                         <div class="xcontent">
                                             <div id="carousel">
                                                 <div id="slides">
@@ -430,7 +435,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <a href="#" id="next">next</a>
+{{--                                        <a href="#" id="next">next</a>--}}
                                         <div style="clear: both;"></div>
                                     </div>
                                 </div>
@@ -745,7 +750,7 @@
                                     <div class="xcate">
                                         <div class="xparent">
                                             <div class="xlink">
-                                                <a tabindex="0"><span>Nhà Tài trợ</span></a>
+                                                <a tabindex="0" href="/nhà-tài-trợ"><span>Nhà Tài trợ</span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -760,16 +765,12 @@
                                                     @foreach($chunk as $sponsor)
                                                         <li style="width: 140px; display: block;"
                                                             class="sponsor-{{$index}}">
-                                                            <a href="{{$sponsor->link == '' ? '#' : $sponsor->link}}"
+                                                            <a href="{{route('sponsor.slug',['slug' => $sponsor->slug])}}"
                                                                tabindex="0"
                                                                target="_blank" title="{{$sponsor->name}}"
                                                                style="color: rgb(12, 103, 151); font-size: 0px;"><img
                                                                     src="{{$sponsor->cover_img}}"
                                                                     style="width: 140px; height: 100px;">
-                                                                <div class="amazon_scroller_title"
-                                                                     style="height: 0;">
-                                                                    undefined
-                                                                </div>
                                                             </a></li>
                                                     @endforeach
                                                 @endforeach

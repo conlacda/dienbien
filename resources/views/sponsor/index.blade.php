@@ -56,7 +56,7 @@
                                         <div class="row">
                                             @foreach($sponsors as $sponsor)
                                                 <div class="col-sm-6">
-                                                    <img src="/images/news.png" alt="" style="width: 100px;display: inline-block">
+                                                    <img src="{{$sponsor->cover_img != "" ? $sponsor->cover_img : "/images/news.png"}}" alt="" style="width: 100px;display: inline-block">
                                                     <a href="{{route('sponsor.slug',['slug' => $sponsor->slug])}}" style="display: inline-block">{{$sponsor->name}}</a>
                                                 </div>
                                             @endforeach

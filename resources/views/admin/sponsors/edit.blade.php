@@ -66,12 +66,12 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Tên nhà tài trợ</label>
-                                        <input type="text" name="name" id="name" class="form-control"
+                                        <input type="text" name="name" id="name" class="form-control" maxlength="1500"
                                                placeholder="Nhập tên nhà tài trợ ..." value="{{$sponsor->name}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="link">Trang web/ Đường link</label>
-                                        <input type="text" name="link" id="link" class="form-control"
+                                        <input type="text" name="link" id="link" class="form-control" maxlength="1500"
                                                placeholder="Nhập tiêu đề ..." value="{{$sponsor->link}}">
                                     </div>
                                     <div class="form-group">

@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Trang quản lý</a></li>
+                            <li class="breadcrumb-item"><a href="/admin/activities">Trang quản lý</a></li>
                             <li class="breadcrumb-item active">Chương trình hỗ trợ</li>
                         </ol>
                     </div>
@@ -67,7 +67,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="title">Tiêu đề</label>
-                                        <input type="text" name="title" id="title" class="form-control" placeholder="Nhập tiêu đề ..." value="{{$activity->title}}">
+                                        <input type="text" name="title" id="title" class="form-control" maxlength="1500" placeholder="Nhập tiêu đề ..." value="{{$activity->title}}">
                                     </div>
                                     <textarea class="summernote" placeholder="Place some text here" name="content">
                                          {{$activity->content}}

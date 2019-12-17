@@ -100,7 +100,7 @@ class SponsorController extends Controller
             $sponsor->cover_img = ImageHelper::store($request->file('cover_img'));
         }
         $sponsor->save();
-        return redirect()->back()->with('message', 'Cập nhật thành công');
+        return redirect()->route('admin.sponsors.index')->with('message', 'Cập nhật thành công');
     }
 
     /**

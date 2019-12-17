@@ -67,7 +67,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="title">Tiêu đề</label>
-                                        <input type="text" name="title" id="title" class="form-control" placeholder="Nhập tiêu đề ..." value="{{$news->title}}">
+                                        <input type="text" name="title" maxlength="1500" id="title" class="form-control" placeholder="Nhập tiêu đề ..." value="{{$news->title}}">
                                     </div>
                                     <textarea class="summernote" placeholder="Place some text here" name="content">
                                          {{$news->content}}

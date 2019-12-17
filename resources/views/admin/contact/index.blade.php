@@ -68,37 +68,37 @@
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Địa chỉ</label>
                                                     <input type="email" class="form-control" id="address-u"
-                                                           placeholder="Nhập vào địa chỉ" name="address"
+                                                           placeholder="Nhập vào địa chỉ" name="address" maxlength="1500"
                                                            value="{{$contactInfo[0]->address}}">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Số điện thoại</label>
                                                     <input type="text" class="form-control" id="phone-u"
-                                                           placeholder="Nhập vào số điện thoại" name="phone"
+                                                           placeholder="Nhập vào số điện thoại" name="phone" maxlength="1500"
                                                            value="{{$contactInfo[0]->phone}}">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Đường dây nóng</label>
                                                     <input type="text" class="form-control" id="hotline-u"
-                                                           placeholder="Nhập vào số đường dây nóng" name="hotline"
+                                                           placeholder="Nhập vào số đường dây nóng" name="hotline" maxlength="1500"
                                                            value="{{$contactInfo[0]->hotline}}">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Tài khoản ngân hàng</label>
                                                     <input type="text" class="form-control" id="backaccount-u" name="bank_account"
-                                                           placeholder="Nhập vào số tài khoản - chi nhánh ngân hàng"
+                                                           placeholder="Nhập vào số tài khoản - chi nhánh ngân hàng" maxlength="1500"
                                                            value="{{$contactInfo[0]->bank_account}}">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Địa chỉ facebook</label>
                                                     <input type="text" class="form-control" id="fb_link-u"
-                                                           placeholder="Nhập vào đường link facebook" name="fb_link"
+                                                           placeholder="Nhập vào đường link facebook" name="fb_link" maxlength="1500"
                                                            value="{{$contactInfo[0]->fb_link}}">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="email-u">Địa chỉ email</label>
                                                     <input type="text" class="form-control" id="email-u"
-                                                           placeholder="Nhập vào địa chỉ email" name="email"
+                                                           placeholder="Nhập vào địa chỉ email" name="email" maxlength="1500"
                                                            value="{{$contactInfo[0]->email}}">
                                                 </div>
                                             </div>

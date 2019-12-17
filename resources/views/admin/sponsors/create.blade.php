@@ -58,19 +58,19 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Tên nhà tài trợ</label>
-                                        <input type="text" name="name" id="name" class="form-control"
+                                        <input type="text" name="name" id="name" class="form-control" maxlength="1500"
                                                placeholder="Nhập tên nhà tài trợ ...">
                                     </div>
                                     <div class="form-group">
                                         <label for="link">Trang web/ Đường link</label>
-                                        <input type="text" name="link" id="link" class="form-control"
+                                        <input type="text" name="link" id="link" class="form-control" maxlength="1500"
                                                placeholder="Nhập trang web liên hệ của nhà tài trợ ...">
                                     </div>
                                     <div class="form-group">
                                         <label for="introduction">Lời giới thiệu về nhà tài trợ</label>
                                         <textarea class="summernote"
                                                   placeholder="Nhập ngắn gọn lời giới thiệu về nhà tài trợ"
-                                                  name="introduction">
+                                                  name="introduction" maxlength="1500">
 
                                         </textarea>
                                     </div>

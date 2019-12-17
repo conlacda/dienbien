@@ -52,7 +52,7 @@
                                         <label for="title" class="col-sm-2 control-label">Tiêu đề bài viết</label>
 
                                         <div class="col-sm-12">
-                                            <input type="text" class="form-control" id="title" name="title"
+                                            <input type="text" class="form-control" id="title" name="title" maxlength="1500"
                                                    placeholder="Tiêu đề">
                                         </div>
                                     </div>

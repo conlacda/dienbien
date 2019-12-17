@@ -55,34 +55,44 @@
                                     <div class="contentx">
                                         <div class="row">
 
-                                            <table class="table table-striped">
+                                            <table class="table table-striped"
+                                                   style="table-layout: fixed; overflow: scroll">
                                                 <tbody>
                                                 <tr>
-                                                    <td>Tiêu đề</td>
-                                                    <td>{{$sponsor->name}}</td>
+                                                    <td style="width: 20%"></td>
+                                                    <td style="width: 80%">
+                                                        <img src="{{$sponsor->cover_img}}">
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>File danh sách</td>
-                                                    <td><a href="{{$sponsor->link}}">{{substr($sponsor->link,0,50). '...'}}</a></td>
-                                                </tr>
-                                                </tbody>
-                                                <tbody>
-                                                <tr>
-                                                    <td>Thời gian</td>
-                                                    <td>{{$sponsor->year}}</td>
+                                                    <td style="width: 20%">Tên nhà tài trợ</td>
+                                                    <td style="width: 80%">{{$sponsor->name}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Giới thiệu</td>
-                                                    <td>{{$sponsor->introduction}}</td>
+                                                    <td>Link</td>
+                                                    <td>
+                                                        <a href="{{$sponsor->link}}">{{substr($sponsor->link,0,50). '...'}}</a>
+                                                    </td>
+                                                </tr>
+                                                @if($sponsor->year != "")
+                                                    <tr>
+                                                        <td>Thời gian</td>
+                                                        <td>{{$sponsor->year}}</td>
+                                                    </tr>
+                                                @endif
+                                                <tr style=" position:relative;overflow: auto;">
+                                                    <td style="width: 20%">Giới thiệu</td>
+                                                    <td style="width: 80%">
+                                                        <div style="overflow: auto;">
+                                                            {!! $sponsor->introduction!!}
+                                                        </div>
+                                                    </td>
                                                 </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
-{{--                                    <iframe src='{{$sponsor->link}}' width='1366px' height='623px' frameborder='0'>fgh.</iframe>--}}
-                                    <iframe src="{{$sponsor->link}}" width='650px' height='623px' frameborder='0'>
-
-                                    </iframe>
+                                    {{--                                    <iframe src='{{$sponsor->link}}' width='1366px' height='623px' frameborder='0'>fgh.</iframe>--}}
                                     <div style="clear:both;"></div>
                                 </div>
 

@@ -29,7 +29,7 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="title">Tiêu đề/Tên</label>
-                                                <input type="text" class="form-control" id="title" name="title"
+                                                <input type="text" class="form-control" id="title" name="title" maxlength="1500"
                                                        placeholder="Nhập tiêu đề/tên văn bản" required
                                                        autocomplete="off">
                                             </div>

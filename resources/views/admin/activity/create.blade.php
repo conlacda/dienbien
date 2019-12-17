@@ -53,7 +53,7 @@
 
                                         <div class="col-sm-12">
                                             <input type="text" class="form-control" id="title" name="title"
-                                                   placeholder="Tiêu đề">
+                                                   placeholder="Tiêu đề" maxlength="1500">
                                         </div>
                                     </div>
                                     <div class="form-group">

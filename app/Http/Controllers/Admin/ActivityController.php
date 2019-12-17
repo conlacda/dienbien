@@ -97,7 +97,7 @@ class ActivityController extends Controller
            $activity->cover_img = ImageHelper::store($request->file('cover_img'));
        }
         $activity->save();
-        return redirect()->back();
+        return redirect('/admin/activities');
     }
 
     /**

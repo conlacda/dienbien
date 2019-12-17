@@ -71,14 +71,14 @@
                                         ảnh</label>
 
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" id="title" name="title" placeholder="Tiêu đề" required>
+                                        <input type="text" class="form-control" id="title" name="title" maxlength="1500" placeholder="Tiêu đề" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="" class="col-md-12 control-label">Chọn album ảnh muốn tải lên</label>
                                     <div class="col-md-12">
-                                        <input type="file" class="form-control" name="album[]" id="album" multiple required>
+                                        <input type="file" class="form-control" name="album[]" id="album"  multiple required>
                                     </div>
                                 </div>
                                 <div class="form-group">
