@@ -3,32 +3,32 @@
         <div class="TNContent">
 
             <div class="TNHeadRight">
-{{--                <div id="dnn_SearchTop" class="TNSearch">--}}
-{{--                    <div class="DnnModule DnnModule-TNNewsSolution DnnModule-514"><a name="514"></a>--}}
-{{--                        <div id="dnn_ctr514_ContentPane">--}}
-{{--                            <!-- Start_Module_514 -->--}}
-{{--                            <div id="dnn_ctr514_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">--}}
+                {{--                <div id="dnn_SearchTop" class="TNSearch">--}}
+                {{--                    <div class="DnnModule DnnModule-TNNewsSolution DnnModule-514"><a name="514"></a>--}}
+                {{--                        <div id="dnn_ctr514_ContentPane">--}}
+                {{--                            <!-- Start_Module_514 -->--}}
+                {{--                            <div id="dnn_ctr514_ModuleContent" class="DNNModuleContent ModTNNewsSolutionC">--}}
 
 
-{{--                                <div class="form-search">--}}
-{{--                                    <label for="tukhoatimkiem" class="placehodercss1"><span--}}
-{{--                                            id="dnn_ctr514_Main_UserNewsSearch_label" for="tukhoatimkiem">Nhập từ khóa tìm kiếm ...</span></label>--}}
-{{--                                    <input name="dnn$ctr514$Main$UserNewsSearch$txtKeyword" type="text"--}}
-{{--                                           id="dnn_ctr514_Main_UserNewsSearch_txtKeyword"--}}
-{{--                                           class="txt-search tukhoatimkiem"--}}
-{{--                                           onkeydown="return __dnn_KeyDown(&#39;13&#39;, &#39;javascript:__doPostBack(%27dnn$ctr514$Main$UserNewsSearch$_SearchButton%27,%27%27)&#39;, event);"--}}
-{{--                                    />--}}
-{{--                                    <a id="dnn_ctr514_Main_UserNewsSearch__SearchButton" class="bt-search"--}}
-{{--                                       href="javascript:__doPostBack(&#39;dnn$ctr514$Main$UserNewsSearch$_SearchButton&#39;,&#39;&#39;)"></a>--}}
-{{--                                </div>--}}
+                {{--                                <div class="form-search">--}}
+                {{--                                    <label for="tukhoatimkiem" class="placehodercss1"><span--}}
+                {{--                                            id="dnn_ctr514_Main_UserNewsSearch_label" for="tukhoatimkiem">Nhập từ khóa tìm kiếm ...</span></label>--}}
+                {{--                                    <input name="dnn$ctr514$Main$UserNewsSearch$txtKeyword" type="text"--}}
+                {{--                                           id="dnn_ctr514_Main_UserNewsSearch_txtKeyword"--}}
+                {{--                                           class="txt-search tukhoatimkiem"--}}
+                {{--                                           onkeydown="return __dnn_KeyDown(&#39;13&#39;, &#39;javascript:__doPostBack(%27dnn$ctr514$Main$UserNewsSearch$_SearchButton%27,%27%27)&#39;, event);"--}}
+                {{--                                    />--}}
+                {{--                                    <a id="dnn_ctr514_Main_UserNewsSearch__SearchButton" class="bt-search"--}}
+                {{--                                       href="javascript:__doPostBack(&#39;dnn$ctr514$Main$UserNewsSearch$_SearchButton&#39;,&#39;&#39;)"></a>--}}
+                {{--                                </div>--}}
 
 
-{{--                            </div>--}}
-{{--                            <!-- End_Module_514 -->--}}
-{{--                        </div>--}}
-{{--                        <div style="clear:both;"></div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                {{--                            </div>--}}
+                {{--                            <!-- End_Module_514 -->--}}
+                {{--                        </div>--}}
+                {{--                        <div style="clear:both;"></div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
                 <div id="dnn_Contact" class="TNContact">
                     <div class="DnnModule DnnModule-TNHtml DnnModule-755"><a name="755"></a>
                         <div id="dnn_ctr755_ContentPane">
@@ -165,8 +165,12 @@
                                     </li>
 
                                     <li><a href="{{route('sponsor.index')}}">Nhà tài trợ</a></li>
-                                    <li><a href="#contact" data-toggle="modal" data-target="#exampleModalCenter">Liên
-                                            hệ</a></li>
+                                    <li>
+                                        {{--                                        <a href="#contact" data-toggle="modal" data-target="#exampleModalCenter">--}}
+                                        <a style="cursor: pointer;" onclick="showContact()">
+                                            Liên hệ
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                             <span id="dnn_ctr516_Main_lblMessage" style="clear:both;"></span>
@@ -183,27 +187,36 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Thông tin liên hệ</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Địa chỉ: {{$contact->address}} </p>
-                <p>Số điện: {{$contact->phone}}</p>
-                <p>Hotline: {{$contact->hotline}}</p>
-                <p>Tài khoản Quỹ: {{$contact->bank_account}}</p>
-                <p>Đối thoại (Trao đổi) : {{$contact->fb_link}}</p>
-                <p>Email: {{$contact->email}}</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
-            </div>
-        </div>
-    </div>
-</div>
+{{--<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"--}}
+{{--     aria-hidden="true">--}}
+{{--    <div class="modal-dialog modal-dialog-centered" role="document">--}}
+{{--        <div class="modal-content">--}}
+{{--            <div class="modal-header">--}}
+{{--                <h5 class="modal-title" id="exampleModalLongTitle">Thông tin liên hệ</h5>--}}
+{{--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+{{--                    <span aria-hidden="true">&times;</span>--}}
+{{--                </button>--}}
+{{--            </div>--}}
+{{--            <div class="modal-body">--}}
+{{--                <p>Địa chỉ: {{$contact->address}} </p>--}}
+{{--                <p>Số điện: {{$contact->phone}}</p>--}}
+{{--                <p>Hotline: {{$contact->hotline}}</p>--}}
+{{--                <p>Tài khoản Quỹ: {{$contact->bank_account}}</p>--}}
+{{--                <p>Đối thoại (Trao đổi) : {{$contact->fb_link}}</p>--}}
+{{--                <p>Email: {{$contact->email}}</p>--}}
+{{--            </div>--}}
+{{--            <div class="modal-footer">--}}
+{{--                <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+<script>
+    function showContact() {
+        window.scrollTo(0, document.body.scrollHeight);
+        $('#contact_info_').css({"color": "yellow"});
+        setTimeout(function () {
+            $('#contact_info_').css({"color": "#D5D5D5","-webkit-transition" : "background-color 1000ms ease-out 2s","-moz-transition" : "background-color 1000ms ease-out 2s","-o-transition":"background-color 1000ms ease-out 2s","transition":"background-color 1000ms ease-out 2s"});
+        }, 1000);
+    }
+</script>
