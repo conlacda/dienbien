@@ -13,11 +13,11 @@ Route::namespace('Guest')->group(function () {
             Route::get('/', 'ChildrenController@index1')->name('index1');
             Route::get('/{slug}', 'ChildrenController@slug1')->name('slug1');
         });
-        Route::prefix('/trẻ-em-đã-được-giúp-đỡ')->group(function () {
+        Route::prefix('/trẻ-em-cần-được-giúp-đỡ')->group(function () {
             Route::get('/', 'ChildrenController@index2')->name('index2');
             Route::get('/{slug}', 'ChildrenController@slug2')->name('slug2');
         });
-        Route::prefix('/trẻ-em-cần-được-giúp-đỡ')->group(function () {
+        Route::prefix('/trẻ-em-đã-được-giúp-đỡ')->group(function () {
             Route::get('/', 'ChildrenController@index3')->name('index3');
             Route::get('/{slug}', 'ChildrenController@slug3')->name('slug3');
         });

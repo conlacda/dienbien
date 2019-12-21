@@ -5,6 +5,9 @@
         a {
             font-size: 15px !important;
         }
+        .simplemenu ul li a{
+            font-size: 12px !important;
+        }
     </style>
 @endpush
 @section('content')

@@ -156,8 +156,8 @@
                                             <li><a href="{{route('children.index1')}}">Tổng quan về trẻ em tỉnh Điện
                                                     Biên</a>
                                             </li>
-                                            <li><a href="{{route('children.index2')}}">Trẻ em đã được giúp đỡ</a></li>
-                                            <li><a href="{{route('children.index3')}}">Trẻ em cần được giúp đỡ</a></li>
+                                            <li><a href="{{route('children.index3')}}">Trẻ em đã được giúp đỡ</a></li>
+                                            <li><a href="{{route('children.index2')}}">Trẻ em cần được giúp đỡ</a></li>
                                             <li><a href="{{route('children.index4')}}">Gương sáng trẻ em</a></li>
                                         </ul>
                                     </li>

@@ -47,7 +47,7 @@ class ChildrenController extends GeneralController
         $posts = Children2::orderBy('id', 'DESC')->paginate(15);
         return view('children.index', compact('posts'))
             ->with([
-                'title' => 'Trẻ em đã được giúp đỡ',
+                'title' => 'Trẻ em cần được giúp đỡ',
                 'link' => route('children.index2')
             ]);
     }
@@ -66,7 +66,7 @@ class ChildrenController extends GeneralController
         $posts = Children3::orderBy('id', 'DESC')->paginate(15);
         return view('children.index', compact('posts'))
             ->with([
-                'title' => 'Trẻ em cần được giúp đỡ',
+                'title' => 'Trẻ em đã được giúp đỡ',
                 'link' => route('children.index3')
             ]);
     }

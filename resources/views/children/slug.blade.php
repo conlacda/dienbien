@@ -40,7 +40,7 @@
 
                                 <div class="header_danhmuc">
                                     <div class="hearder_tab_home">
-                                        <a href="/"></a>
+                                        <a href="/"><i class="fas fa-home" style="color:white"></i></a>
                                     </div>
                                     <div class="header_Shape"></div>
                                     <div class="hearder_tab_level1"><a href="#">&nbsp;Tin tức -
