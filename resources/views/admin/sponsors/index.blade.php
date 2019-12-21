@@ -40,25 +40,25 @@
                     </div>
                 </div>
                 <div class="card-body p-0" style="display: block;">
-                    <table class="table table-striped projects">
+                    <table class="table table-striped projects"  style="table-layout: fixed; !important;">
                         <thead>
                         <tr>
-                            <th style="width: 1%">
+                            <th style="width: 3%">
                                 #
                             </th>
-                            <th style="width: 20%">
+                            <th style="width: 10%">
                                 Tên
                             </th>
-                            <th style="width: 20%">
+                            <th style="width: 10%">
                                 Trang web
                             </th>
-                            <th style="width: 20%">
+                            <th style="width: 46%">
                                 Lời giới thiệu
                             </th>
                             <th style="width: 10%">
                                 Hình ảnh
                             </th>
-                            <th style="width: 28%" class="text-center">
+                            <th style="width: 25%" class="text-center">
                                 Thao tác
                             </th>
                         </tr>
@@ -87,7 +87,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <img src="{{$sponsor->cover_img}}" width="120px">
+                                    <img src="{{$sponsor->cover_img}}" style="width: 100%">
                                 </td>
                                 <td class="project-state">
                                     <a class="btn btn-primary btn-sm" data-toggle="modal"
@@ -133,7 +133,9 @@
                                                     <a href="//{{$sponsor->link}}">
                                                         {{substr($sponsor->link,0,40). '...'}}
                                                     </a>
-                                                    <p>Lời giới thiệu: {!!$sponsor->introduction!!}</p>
+                                                    <div style="overflow: scroll">
+                                                        Lời giới thiệu: {!!$sponsor->introduction!!}
+                                                    </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <a class="btn btn-info btn-sm"

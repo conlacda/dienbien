@@ -44,7 +44,8 @@ class Children4Controller extends Controller
     public function store(Request $request)
     {
         $this->repo->store($request);
-        return redirect()->back()->with('message', 'Tạo bài viết thành công');
+        return redirect()->route('admin.children4s.index')->with('message', 'Tạo bài viết thành công');
+
     }
 
     /**

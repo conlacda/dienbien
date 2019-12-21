@@ -41,19 +41,19 @@
                     <table class="table table-striped projects">
                         <thead>
                         <tr>
-                            <th style="width: 1%">
+                            <th style="width: 3%">
                                 #
                             </th>
-                            <th style="width: 18%">
+                            <th style="width: 20%">
                                 Tiêu đề
                             </th>
-                            <th style="width: 33%">
+                            <th style="width: 46%">
                                 Nội dung
                             </th>
-                            <th style="width: 12%">
+                            <th style="width: 8%">
                                 Người đăng bài
                             </th>
-                            <th style="width: 36%" class="text-center">
+                            <th style="width: 23%" class="text-center">
                                 Thao tác
                             </th>
                         </tr>
@@ -126,7 +126,9 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <img src="{{$post->cover_img}}" width="200px">
-                                                    <p>{!!$post->content!!}</p>
+                                                    <div style="overflow: scroll">
+                                                        {!!$post->content!!}
+                                                    </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-info btn-sm"

@@ -43,22 +43,22 @@
                     </div>
                 </div>
                 <div class="card-body p-0" style="display: block;">
-                    <table class="table table-striped projects">
+                    <table class="table table-striped projects" style="table-layout: fixed; !important;">
                         <thead>
                         <tr>
-                            <th style="width: 1%">
+                            <th style="width: 3%">
                                 #
                             </th>
                             <th style="width: 20%">
                                 Tiêu đề
                             </th>
-                            <th style="width: 10%">
+                            <th style="width: 46%">
                                 Bài viết
                             </th>
                             <th style="width: 8%">
                                 Ảnh chủ đề
                             </th>
-                            <th style="width: 38%" class="text-center">
+                            <th style="width: 23%" class="text-center">
                                 Thao tác
                             </th>
                         </tr>
@@ -78,14 +78,14 @@
                                         Cập nhật vào: {{$activity->updated_at}}
                                     </small>
                                 </td>
-                                <td >
+                                <td>
                                     <div class="content-hidden">
 
-                                    {!! $activity->content!!}
+                                        {!! $activity->content!!}
                                     </div>
                                 </td>
-                                <td class="4">
-                                    <img src="{{$activity->cover_img}}" width="120px">
+                                <td>
+                                    <img src="{{$activity->cover_img}}" width="100%">
                                 </td>
                                 <td class="project-state">
                                     <a class="btn btn-primary btn-sm" data-toggle="modal"
@@ -129,7 +129,9 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <img src="{{$activity->cover_img}}" width="200px">
-                                                    <p>{!!$activity->content!!}</p>
+                                                    <div style="overflow: scroll">
+                                                        {!!$activity->content!!}
+                                                    </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <a class="btn btn-info btn-sm"

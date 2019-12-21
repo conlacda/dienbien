@@ -28,7 +28,8 @@ class DocumentController extends Controller
         $document['title'] = $request->title;
         $document['slug'] = Str::slug($request->title, '-') . uniqid();
         $document->save();
-        return redirect()->back();
+        return redirect()->route('admin.document.index')->with('message', 'Tạo bài viết thành công');
+
     }
 
     public function destroy($slug)

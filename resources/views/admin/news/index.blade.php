@@ -49,19 +49,19 @@
                     <table class="table table-striped projects" style="table-layout: fixed;word-wrap: break-word;">
                         <thead>
                         <tr>
-                            <th style="width: 1%">
+                            <th style="width: 3%">
                                 #
                             </th>
                             <th style="width: 20%">
                                 Tiêu đề
                             </th>
-                            <th style="width: 36%">
+                            <th style="width: 46%">
                                 Nội dung
                             </th>
                             <th style="width: 8%">
                                 Ảnh chủ đề
                             </th>
-                            <th style="width: 35%" class="text-center">
+                            <th style="width: 23%" class="text-center">
                                 Thao tác
                             </th>
                         </tr>
@@ -83,12 +83,12 @@
                                 </td>
                                 <td>
                                     <div class="content-hidden">
-{{--                                        {!! $post->content!!}--}}
-                                        Nhấn nút Xem để hiển thị bản xem trước
+                                        {!! $post->content!!}
+{{--                                        Nhấn nút Xem để hiển thị bản xem trước--}}
                                     </div>
                                 </td>
                                 <td>
-                                    <img src="{{$post->cover_img}}" width="120px">
+                                    <img src="{{$post->cover_img}}" style="width: 100%">
                                 </td>
                                 <td class="project-state">
                                     <a class="btn btn-primary btn-sm" data-toggle="modal"
@@ -132,7 +132,9 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <img src="{{$post->cover_img}}" width="200px">
-                                                    <p>{!!$post->content!!}</p>
+                                                    <div style="overflow: scroll">
+                                                        {!!$post->content!!}
+                                                    </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <a class="btn btn-info btn-sm"

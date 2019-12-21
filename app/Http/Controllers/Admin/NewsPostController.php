@@ -67,6 +67,6 @@ class NewsPostController extends Controller
             $news->cover_img = ImageHelper::store($request->file('cover_img'));
         }
         $news->save();
-        return redirect()->back()->with('message', 'Cập nhật thành công');
+        return redirect()->route('admin.news.index')->with('message', 'Cập nhật thành công');
     }
 }
