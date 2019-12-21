@@ -128,4 +128,13 @@
     {{--            alertify.alert("{{ session()->get('message') }}").set({title: "Thao tác"});--}}
     {{--        </script>--}}
     {{--    @endif--}}
+    <script>
+        $('#file').change(function(){
+            let file = document.getElementById('file').files[0];
+            if (file.size > 20 * 1024 * 1024){
+                alert('Kích thước không được vượt quá 20MB');
+                document.getElementById("file").value = "";
+            }
+        })
+    </script>
 @endpush
