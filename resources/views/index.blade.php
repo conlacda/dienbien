@@ -461,12 +461,21 @@
                         @if(count($videos) == 0)
                             <p>Chưa có video nào </p>
                         @else
-                            <div class="video-play">
-                                <video width="320" height="240" controls>
+{{--                            <div class="video-play">--}}
+{{--                                <video width="320" height="240" controls>--}}
+{{--                                    <source src="{{$videos[0]->link}}" type="video/mp4">--}}
+{{--                                    Your browser does not support the video tag.--}}
+{{--                                </video>--}}
+{{--                            </div>--}}
+                            @if (substr($videos[0]->link,0,7) == "<iframe")
+                                <div style="width: 100%;">
+                                    {!! \App\Helpers\VideoHelper::iframeHTML($videos[0]->link) !!}
+                                </div>
+                            @else
+                                <video width="100%" controls>
                                     <source src="{{$videos[0]->link}}" type="video/mp4">
-                                    Your browser does not support the video tag.
                                 </video>
-                            </div>
+                            @endif
                         @endif
                     </div>
                     {{--                        Chương trình đã tổ chức--}}
