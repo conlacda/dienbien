@@ -344,7 +344,7 @@
                                                         </div>
                                                         <div class="modal-body">
                                                             <div style="text-align: center;">
-                                                                <img v-if="!loaded" src="http://doanla.test/images/loading.gif" style="width: 20%">
+                                                                <img v-if="!loaded" src="/images/loading.gif" style="width: 20%">
                                                                 <img v-bind:src="cover_img">
                                                                 <p style="color: #2d5adc">@{{title}}</p>
                                                             </div>
@@ -842,7 +842,7 @@
                 app.content = '';
                 app.cover_img = '';
                 app.loaded = false;
-                //<img src="http://doanla.test/images/loading.gif">
+            
             })
         });
         var app = new Vue({
