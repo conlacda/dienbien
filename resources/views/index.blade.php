@@ -5,7 +5,8 @@
         a {
             font-size: 15px !important;
         }
-        .simplemenu ul li a{
+
+        .simplemenu ul li a {
             font-size: 12px !important;
         }
     </style>
@@ -319,43 +320,46 @@
                                                     <div class="xitem">
                                                         <h2 class="xlink">
                                                             <a title="#" @click="getContent({{$post->id}})"
-                                                               data-target="#post1-{{$post->id}}">
+                                                               data-target="#post1-{{$post->id}}"
+                                                               style="cursor: pointer;">
                                                                 {{$post->title}}
                                                             </a>
                                                         </h2>
                                                     </div>
-                                                    {{--  Modal xxxx-----------}}
-                                                    <div class="modal fade" id="news-modal" tabindex="-1"
-                                                         role="dialog" aria-labelledby="exampleModalLabel"
-                                                         aria-hidden="true">
-                                                        <div class="modal-dialog modal-lg" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">
-                                                                        Nội dung bài viết</h5>
-                                                                    <button type="button" class="close"
-                                                                            data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <div style="text-align: center;">
-                                                                        <img v-bind:src="cover_img">
-                                                                        <p style="color: #2d5adc">@{{title}}</p>
-                                                                    </div>
-                                                                    <div v-html="content" style="overflow: scroll"></div>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                            data-dismiss="modal">Xong
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {{--                                                        --}}
                                                 @endforeach
                                             @endif
+                                            {{--  Modal xxxx-----------}}
+                                            <div class="modal fade" id="news-modal" tabindex="-1"
+                                                 role="dialog" aria-labelledby="exampleModalLabel"
+                                                 aria-hidden="true">
+                                                <div class="modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                Nội dung bài viết</h5>
+                                                            <button type="button" class="close"
+                                                                    data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div style="text-align: center;">
+                                                                <img v-if="!loaded" src="http://doanla.test/images/loading.gif" style="width: 20%">
+                                                                <img v-bind:src="cover_img">
+                                                                <p style="color: #2d5adc">@{{title}}</p>
+                                                            </div>
+                                                            <div v-html="content" style="overflow: scroll"></div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Xong
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{--                                                        --}}
+
 
                                         </div>
                                         <div style="clear: both;"></div>
@@ -417,7 +421,7 @@
                                         </div>
                                     </div>
                                     <div id="buttons">
-{{--                                        <a href="#" id="prev">prev</a>--}}
+                                        {{--                                        <a href="#" id="prev">prev</a>--}}
                                         <div class="xcontent">
                                             <div id="carousel">
                                                 <div id="slides">
@@ -438,7 +442,7 @@
                                                 </div>
                                             </div>
                                         </div>
-{{--                                        <a href="#" id="next">next</a>--}}
+                                        {{--                                        <a href="#" id="next">next</a>--}}
                                         <div style="clear: both;"></div>
                                     </div>
                                 </div>
@@ -464,12 +468,12 @@
                         @if(count($videos) == 0)
                             <p>Chưa có video nào </p>
                         @else
-{{--                            <div class="video-play">--}}
-{{--                                <video width="320" height="240" controls>--}}
-{{--                                    <source src="{{$videos[0]->link}}" type="video/mp4">--}}
-{{--                                    Your browser does not support the video tag.--}}
-{{--                                </video>--}}
-{{--                            </div>--}}
+                            {{--                            <div class="video-play">--}}
+                            {{--                                <video width="320" height="240" controls>--}}
+                            {{--                                    <source src="{{$videos[0]->link}}" type="video/mp4">--}}
+                            {{--                                    Your browser does not support the video tag.--}}
+                            {{--                                </video>--}}
+                            {{--                            </div>--}}
                             @if (substr($videos[0]->link,0,7) == "<iframe")
                                 <div style="width: 100%;">
                                     {!! \App\Helpers\VideoHelper::iframeHTML($videos[0]->link) !!}
@@ -825,15 +829,21 @@
             // setInterval(function(){ alert("Hello"); }, 3000);
             var sponsor_number = {{count($sponsors)}};
             var slide_number = Math.trunc(sponsor_number / 6);
-            console.log(slide_number);
+
             let index = 0;
             setInterval(function () {
                 $(".sponsor-" + index).hide();
                 index += 1;
                 if (index > slide_number) index = 0;
                 $(".sponsor-" + index).show();
-                console.log(index);
             }, 5000);
+            $('#news-modal').on('hide.bs.modal', function (e) {
+                app.title = 'Loading ...';
+                app.content = '';
+                app.cover_img = '';
+                app.loaded = false;
+                //<img src="http://doanla.test/images/loading.gif">
+            })
         });
         var app = new Vue({
             el: '#app',
@@ -841,6 +851,7 @@
                 title: '',
                 content: '',
                 cover_img: '',
+                loaded: false,
             },
             methods: {
                 getContent: function (id) {
@@ -852,6 +863,7 @@
                             app.content = res.data.content;
                             app.cover_img = res.data.cover_img;
                         }
+                        app.loaded = true;
                     }).catch(function (err) {
                         console.log(err.data);
                     });
