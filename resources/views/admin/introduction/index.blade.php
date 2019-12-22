@@ -38,19 +38,19 @@
                     </div>
                 </div>
                 <div class="card-body p-0" style="display: block;">
-                    <table class="table table-striped projects">
+                    <table class="table table-striped projects" style="table-layout: fixed; !important;">
                         <thead>
                         <tr>
-                            <th style="width: 1%">
+                            <th style="width: 3%">
                                 #
                             </th>
-                            <th style="width: 20%">
+                            <th style="width: 15%">
                                 Đề mục
                             </th>
-                            <th style="width: 30%">
+                            <th style="width: 57%">
                                 Bài viết
                             </th>
-                            <th style="width: 28%" class="text-center">
+                            <th style="width: 25%" class="text-center">
                                 Thao tác
                             </th>
                         </tr>
