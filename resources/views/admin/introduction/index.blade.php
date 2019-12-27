@@ -96,7 +96,9 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    {!!$introduction->content!!}
+                                                    <div style="overflow: scroll">
+                                                        {!!$introduction->content!!}
+                                                    </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <a class="btn btn-info btn-sm"
