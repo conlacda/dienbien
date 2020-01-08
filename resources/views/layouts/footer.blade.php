@@ -28,11 +28,11 @@
                             Địa chỉ:  {{$contact->address}}<br>
                             Tài khoản quỹ: {{$contact->bank_account}}<br>
 {{--                            Địa chỉ: Tổ 17 Phường Mường Thanh Điện Biên Phủ<br>--}}
-                            Địa chỉ email: {{$contact->address}}<br>
+                            Địa chỉ email: {{$contact->email}}<br>
 {{--                            Chúng tôi là tổ chức vì cộng đồng<br>--}}
                         </span>
                     </div>
-                    <div style="clear: both;"></div
+                    <div style="clear: both;"></div>
                     <span id="dnn_ctr527_Main_lblMessage" style="clear: both;"></span>
                 </div>
                 <!-- End_Module_527 -->
