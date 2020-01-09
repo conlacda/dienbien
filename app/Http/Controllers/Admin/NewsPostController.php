@@ -12,8 +12,9 @@ use Illuminate\Support\Str;
 
 class NewsPostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        dd($request->all());
         $posts = NewsPost::paginate(5);
         return view('admin.news.index', compact('posts'));
     }
