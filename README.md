@@ -18,6 +18,7 @@ mysql
 CREATE DATABASE dienbien;
 use dienbien
 source backup-file.sql;
+Thay đổi kích thước của 1 trường trong mysql  SET GLOBAL max_allowed_packet=1073741824; (1GB)
 Composer 
 composer install --ignore-platform-reqs
 
