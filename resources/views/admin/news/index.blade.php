@@ -151,7 +151,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $posts->render() }}
+                    {!! $posts->render() !!}
                 </div>
                 <!-- /.card-body -->
             </div>
